@@ -86,19 +86,6 @@ for i in range(len(groups)):
         ]
     )
 
-##########
-# COLORS #
-##########
-
-bg_dark = "11111b"
-bg_light = "1e1e2e"
-
-neutral_purple = "6c7086"
-blue = "99e6ff"
-
-text_main = "cdd6f4"
-text_highlight = "e052bd"
-text_highlight2 = "b4befe"
 
 ###########
 # LAYOUTS #
@@ -115,7 +102,7 @@ layouts = [
     layout.Max(
         margin = gap,
         border_width = 3,
-        border_focus = cp["pink"],
+        border_focus = cp["teal"],
     ),
 ]
 
@@ -195,14 +182,14 @@ screens = [
                 ),
                 widget.Image(filename = "~/.config/qtile/assets/base_right.png"),
                 widget.Prompt(),
-                widget.Spacer(background = bg_dark),
+                widget.Spacer(background = cp["crust"]),
                 widget.Image(filename = "~/.config/qtile/assets/base_left.png"),
                 widget.Clock(
                     format="%a %Y/%m/%d %H:%M",
                     font = 'JetBrains Mono bold',
                 ),
                 widget.Image(filename = "~/.config/qtile/assets/base_right.png"),
-                widget.Spacer(background = bg_dark),
+                widget.Spacer(background = cp["crust"]),
                 widget.Systray(
                     background = cp["crust"],
                 ),
@@ -243,7 +230,6 @@ screens = [
                     ]
                 ),
 
-                #widget.Battery(background = bg_light),
 
                 #power
                 widget.Spacer(length = 10),
