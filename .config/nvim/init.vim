@@ -10,7 +10,6 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
-Plug 'rcarriga/nvim-notify'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'glepnir/dashboard-nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -36,13 +35,6 @@ let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
 let g:airline#extensions#ale#enabled = 1
 highlight clear ALEWarningSign
-
-
-" NOTIFY START
-lua << EOF
-vim.notify = require("notify")
-EOF
-" NOTIFY END
 
 
 " Illuminate
@@ -202,7 +194,7 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-"coc confuguration end
+" coc confuguration end
 
 
 "Airline
