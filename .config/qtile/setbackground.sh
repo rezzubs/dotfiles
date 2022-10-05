@@ -14,7 +14,7 @@ pscircle \
 	--tree-sector-angle=3.3 \
 	--tree-center=0:-900 \
 	--tree-rotate=true \
-	--tree-rotation-angle=0.08 \
+    --tree-rotation-angle=0.03 \
     --background-color=181825 \
     --tree-font-size=25 \
     --dot-radius=10 \
