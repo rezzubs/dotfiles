@@ -2,5 +2,6 @@
     "diagnostic.displayByAle": false,
     "diagnostic.errorSign": "",
     "diagnostic.warningSign": "",
-    "diagnostic.infoSign": ""
+    "diagnostic.infoSign": "",
+    "diagnostic.checkCurrentLine": true
 }
