@@ -13,7 +13,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'glepnir/dashboard-nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
-" Plug 'w0rp/ale'
+Plug 'jdhao/better-escape.vim'
 
 call plug#end()
 
@@ -27,14 +27,10 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" Ale
-" let g:ale_disable_lsp = 1
-" let g:ale_sign_column_always = 1
-" let g:ale_sign_error = ''
-" let g:ale_sign_warning = ''
-" let g:airline#extensions#ale#enabled = 1
-" highlight clear ALEWarningSign
 
+" Better escape.
+let g:better_escape_shortcut = ['jj', 'jk', 'kj']
+let g:better_escape_interval = 200
 
 " Illuminate
 let g:Illuminate_ftHighlightGroups = {
