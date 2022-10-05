@@ -13,7 +13,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'glepnir/dashboard-nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -28,12 +28,12 @@ set shiftwidth=4
 set expandtab
 
 " Ale
-let g:ale_disable_lsp = 1
-let g:ale_sign_column_always = 1
-let g:ale_sign_error = ''
-let g:ale_sign_warning = ''
-let g:airline#extensions#ale#enabled = 1
-highlight clear ALEWarningSign
+" let g:ale_disable_lsp = 1
+" let g:ale_sign_column_always = 1
+" let g:ale_sign_error = ''
+" let g:ale_sign_warning = ''
+" let g:airline#extensions#ale#enabled = 1
+" highlight clear ALEWarningSign
 
 
 " Illuminate
@@ -162,14 +162,6 @@ endif
 nmap <silent> <C-s> <Plug>(coc-range-select)
 xmap <silent> <C-s> <Plug>(coc-range-select)
 
-" Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocActionAsync('format')
-
-" Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-" Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
@@ -240,6 +232,10 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+
+" gitgutter
+let g:gitgutter_map_keys = 0
+
 
 "Color
 let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
