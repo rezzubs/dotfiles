@@ -64,6 +64,8 @@ keys = [
 
     #screenshot
     Key([mod, "shift"], "s", lazy.spawn("flameshot gui")),
+    # fullscreen toggle
+    Key([mod], "f", lazy.window.toggle_fullscreen()),
 ]
 
 groups = [Group(i) for i in "一二三四五六七八九"]
