@@ -11,7 +11,7 @@ from catppuccin import catppuccin as cp
 
 mod = "mod4"
 terminal = guess_terminal()
-gap = 10
+gap = 6
 
 
 keys = [
