@@ -14,10 +14,11 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'glepnir/dashboard-nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'jdhao/better-escape.vim'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 
 call plug#end()
-
-
 
 
 "Basic settings
@@ -27,6 +28,68 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set autoread
+set clipboard+=unnamedplus
+let mapleader=" "
+nnoremap <SPACE> <Nop>
+
+" Bufferline
+set termguicolors
+lua << EOF
+require("bufferline").setup{
+options = {
+    offsets = {
+        {
+                filetype = "NvimTree",
+                text = "NvimTree",
+                highlight = "Directory",
+                separator = true -- use a "true" to enable the default, or set your own character
+        }
+    },
+}
+}
+EOF
+nnoremap <silent><leader>1 <Cmd>BufferLineGoToBuffer 1<CR>
+nnoremap <silent><leader>2 <Cmd>BufferLineGoToBuffer 2<CR>
+nnoremap <silent><leader>3 <Cmd>BufferLineGoToBuffer 3<CR>
+nnoremap <silent><leader>4 <Cmd>BufferLineGoToBuffer 4<CR>
+nnoremap <silent><leader>5 <Cmd>BufferLineGoToBuffer 5<CR>
+nnoremap <silent><leader>6 <Cmd>BufferLineGoToBuffer 6<CR>
+nnoremap <silent><leader>7 <Cmd>BufferLineGoToBuffer 7<CR>
+nnoremap <silent><leader>8 <Cmd>BufferLineGoToBuffer 8<CR>
+nnoremap <silent><leader>9 <Cmd>BufferLineGoToBuffer 9<CR>
+nnoremap <silent><leader>$ <Cmd>BufferLineGoToBuffer -1<CR>
+
+
+" Nvim Tree
+lua << EOF
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- empty setup using defaults
+require("nvim-tree").setup()
+
+-- OR setup with some options
+require("nvim-tree").setup({
+  sort_by = "case_sensitive",
+  view = {
+    adaptive_size = true,
+    mappings = {
+      list = {
+        { key = "u", action = "dir_up" },
+      },
+    },
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
+EOF
+nnoremap <silent><leader>e <Cmd>NvimTreeToggle <CR>
+
 
 " Neovide
 let g:neovide_transparency = 0.8
@@ -34,15 +97,18 @@ let g:neovide_hide_mouse_when_typing = v:true
 let g:neovide_refresh_rate = 144
 let g:neovide_refresh_rate_idle = 5
 
+
 " Better escape.
 let g:better_escape_shortcut = ['jj', 'jk', 'kj']
 let g:better_escape_interval = 200
+
 
 " Illuminate
 let g:Illuminate_ftHighlightGroups = {
       \ 'vim': ['vimVar', 'vimString', 'vimLineComment',
       \         'vimFuncName', 'vimFunction', 'vimUserFunc', 'vimFunc']
       \ }
+
 
 "coc configuration start
 " Some servers have issues with backup files, see #649.
@@ -169,24 +235,6 @@ xmap <silent> <C-s> <Plug>(coc-range-select)
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-" Mappings for CoCList
-" Show all diagnostics.
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
-" Show commands.
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document.
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols.
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " coc confuguration end
 
 
@@ -243,17 +291,18 @@ let g:gitgutter_map_keys = 0
 let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
 
 lua << EOF
-require("catppuccin").setup({
-transparent_background = false,
-integrations = {
-    gitgutter = true,
-    illuminate = true,
-    notify = true,
-    treesitter = true
-
-}
+    require("catppuccin").setup({
+    transparent_background = false,
+    integrations = {
+        gitgutter = true,
+        illuminate = true,
+        notify = true,
+        treesitter = true,
+        nvimtree = true,
+    }
 })
 EOF
 
 colorscheme catppuccin
+
 
