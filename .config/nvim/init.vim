@@ -28,6 +28,11 @@ set shiftwidth=4
 set expandtab
 set autoread
 
+" Neovide
+let g:neovide_transparency = 0.8
+let g:neovide_hide_mouse_when_typing = v:true
+let g:neovide_refresh_rate = 144
+let g:neovide_refresh_rate_idle = 5
 
 " Better escape.
 let g:better_escape_shortcut = ['jj', 'jk', 'kj']
@@ -239,7 +244,7 @@ let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
 
 lua << EOF
 require("catppuccin").setup({
-transparent_background = true,
+transparent_background = false,
 integrations = {
     gitgutter = true,
     illuminate = true,
