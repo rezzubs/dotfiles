@@ -11,7 +11,6 @@ Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'glepnir/dashboard-nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'jdhao/better-escape.vim'
 Plug 'nvim-tree/nvim-web-devicons'
@@ -92,7 +91,7 @@ nnoremap <silent><leader>e <Cmd>NvimTreeToggle <CR>
 
 
 " Neovide
-let g:neovide_transparency = 0.8
+let g:neovide_transparency = 0.6
 let g:neovide_hide_mouse_when_typing = v:true
 let g:neovide_refresh_rate = 144
 let g:neovide_refresh_rate_idle = 5
@@ -292,7 +291,7 @@ let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
 
 lua << EOF
     require("catppuccin").setup({
-    transparent_background = false,
+    transparent_background = true,
     integrations = {
         gitgutter = true,
         illuminate = true,
