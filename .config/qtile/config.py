@@ -10,7 +10,7 @@ from catppuccin import catppuccin as cp
 
 
 mod = "mod4"
-terminal = guess_terminal()
+terminal = "kitty"
 gap = 6
 
 
@@ -54,13 +54,14 @@ keys = [
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key(["mod1"], "Tab", lazy.screen.next_group()),
     Key(["mod1", "shift"], "Tab", lazy.screen.prev_group()),
-    Key([], "F1", lazy.spawn("rofi -show drun")),
+    Key([mod], "d", lazy.spawn("rofi -show drun")),
 
     #media
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 10%-")),
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s 10%+")),
     Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 0 -5%")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 0 +5%")),
+    Key([mod], "O", lazy.spawn("bash -c cycle-default-sink")),
 
     #screenshot
     Key([mod, "shift"], "s", lazy.spawn("flameshot gui")),
@@ -96,14 +97,14 @@ for i in range(len(groups)):
 layouts = [
     layout.Columns(
         margin = gap,
-        border_width = 3,
-        border_focus = cp["mauve"],
+        border_width = 0,
+        border_focus = cp["lavender"],
         border_normal = cp["overlay0"],
         border_on_single = True,
     ),
     layout.Max(
         margin = gap,
-        border_width = 3,
+        border_width = 0,
         border_focus = cp["teal"],
     ),
 ]
