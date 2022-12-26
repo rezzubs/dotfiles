@@ -1,8 +1,0 @@
-{
-    "diagnostic.displayByAle": false,
-    "diagnostic.errorSign": "",
-    "diagnostic.warningSign": "",
-    "diagnostic.infoSign": "",
-    "diagnostic.checkCurrentLine": true,
-    "svelte.enable-ts-plugin": true
-}
