@@ -1,0 +1,49 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.config/zsh/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+bindkey -v
+# End of lines configured by zsh-newuser-install
+
+
+# Additional completion sources
+fpath=($ZDOTDIR/zsh-completions/src $fpath)
+# Cargo plugin
+source $ZDOTDIR/zsh-cargo-completion/zsh-cargo-completion.plugin.zsh
+alias cn="cargo new"
+
+# Autocompletion
+source $ZDOTDIR/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
+bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
+
+# all Tab widgets
+zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
+# all history widgets
+zstyle ':autocomplete:*history*:*' insert-unambiguous yes
+# ^S
+zstyle ':autocomplete:menu-search:*' insert-unambiguous yes
+
+bindkey -v
+# bindkey '\e[3~' delete-char
+bindkey '^R' history-incremental-search-backward
+
+
+# Starship init
+eval "$(starship init zsh)"
+
+
+# Aliases
+alias ls=exa
+alias lsa="exa -a"
+alias lsl="exa -l"
+alias lsla="exa -la"
+alias cat=bat
+alias zconf="$EDITOR $ZDOTDIR/.zshrc"
+alias zenv="$EDITOR $HOME/.zshenv"
+alias hx=helix
+alias gt="gitui -t mocha.ron"
+alias cm="chezmoi"
+
+# Syntax highlighting
+source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -1,0 +1,696 @@
+$PATH
+echo $PATH
+c-c
+ls .config/fish
+rm -rf .config/fish
+exit
+helix .config/zsh/.zshrc
+echo $PATH
+cat .zshenv
+rm -rf .dotfiles
+ls
+ls -a
+rm .git*
+rm -rf .git*
+ls
+ls -a
+bat .nv
+ls .nv
+rm -rf .nv .histfile
+rm -rf .bashrc .bash_*
+ls -a
+helix .zshenv
+reboot
+config env
+exit
+lsl
+cd
+lsl
+lsla
+lsa
+lsa
+ls
+alias "config zsh"="helix $ZSHDOTS/.zshrc"
+config zsh
+alias config="helix $ZSHDOTS"
+config
+alias config="helix $ZSHDOTS/.zshrc"
+config
+alias config=$"helix $ZSHDOTS/.zshrc"
+config
+echo $ZSHDOTS
+$ZDOTS
+cat .zshenv
+alias config="helix $ZDOTSDIR/.zshrc"
+config
+alias config="helix $ZDOTDIR/.zshrc"
+config
+alias "config zsh"="helix $ZDOTDIR/.zshrc"
+config zsh
+config zsh
+echo alias "config zsh"="helix $ZDOTDIR/.zshrc"
+echo alias "config zsh"="helix $ZDOTDIR/.zshrc" >> $ZDOTDIR/.zshrc
+config
+exit
+echo $PATH
+sk
+paru -R fish
+paru -S fish
+paru -Rsun fish
+sk
+/
+cd /
+sk
+cd
+cat /etc/profile
+cat /etc/profile | rg cargo
+cat /etc/profile | grep cargo
+cd /etc/profile.d
+ls
+bat perlbin.sh
+ls
+cat /etc/profile | grep cargo
+cd
+find ~ -type f -exec grep -lE 'cargo|\.cargo/bin' {} +\
+
+ls $PATH
+echo $PATH
+ls -a
+man git checkout
+git checkout --help | less
+git checkout --help
+paru -S man
+man git
+git checkout --help
+cd dev
+cd ..
+cd zsh
+cd .config/zsh
+ls
+ls -a
+echo $EDITOR
+helix .zshrc
+echo $PATH
+sk
+rip .local/share/fish
+rm -rf .local/share/fish
+echo $PATH
+zsh
+config zsh
+alias "config zsh"="helix $ZDOTDIR/.zshrc"\
+
+config zsh
+zcmp
+zdot
+zdot
+zconf
+helix $ZDOTDIR/.zshrc
+exit
+cd $ZDOTDIR
+git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git\
+
+ls
+ls zsh-autocomplete
+exit
+cargo
+grep
+rg
+tej
+exit
+cd dev
+cd
+man cargo
+man git
+cd $ZDOTDIR
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+ls
+ls
+rm ~/.zsh
+rm -rf ~/.zsh
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZDOTDIR/zsh-autosuggestions
+ls
+cd /home/rezzubs/.config/zsh/
+cd $ZDOTDIR
+ls
+source zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+exit
+cd $ZDOTDIR
+  git clone https://github.com/zsh-users/zsh-completions.git
+ls
+rm -rf zsh-autosuggestions
+cd zsh-completions/src
+ls
+cd ..
+ls
+lsa
+ls
+cd ..
+ls
+cd $ZDOTDIR
+git clone https://github.com/MenkeTechnologies/zsh-cargo-completion.git
+ls
+ls z-c-c
+ls zsh-cargo-completion
+source zsh-cargo-completion/zsh-cargo-completion.plugin.zsh
+co
+co
+exit
+cd
+cn test
+ls
+rm test
+cn test
+ci cargo-tarpaulin
+co tauri --help
+-
+co tauri dev
+exit
+zconf
+zconf
+exit
+cd $ZDOTDIR
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git\
+echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+zconf
+cd zsh-autocomplete
+exit
+zconf
+exit
+cd ~/dev
+cn dotfiles-manager
+cd dotfiles-manager
+cd ..
+cd dotfiles-manager
+cad
+cad clap --features derive
+cad dialoguer directories git2
+git checkout --help
+git checkout --help
+ls
+bat Cargo.toml
+cd dev/dotfiles-manager
+cargo install
+cargo install --path .
+ls
+zconf
+zconf
+hx
+alias hx=helix
+hx
+cad serde toml
+git remote add origin git@github.com:rezzubs/dotfiles-manager.git
+ls
+git status
+gitui
+paru gitui
+gitui
+fg
+gitui
+git commit -m "fist commit"
+git config --global user.email "marten.roots@gmail.com"
+git config --global user.name "Marten Roots"
+zconf
+source $ZDOTDIR/.zshrc
+gt
+source $ZDOTDIR/.zshrc
+gt
+git branch
+fg
+gt
+gt
+git remote add origin git@github.com:rezzubs/dotfiles-manager.git
+git remote show
+gt
+git push -u origin main
+gt
+cd zsh-autocomplete
+cd ~/dev/dotfiles-manager
+hx
+hx
+cd
+cd .config/gitui
+ls
+cat theme.ron
+gitui
+git clone https://github.com/catppuccin/gitui.git
+mv gitui/theme/*.ron ./
+rm -r gitui
+rm -rf gitui
+ls
+zconf
+git config --global init.defaultBranch main
+helix --health rust
+echo $PATH
+cd
+dotfiles-manager -h
+dotfiles-manager --help
+cd .cargo/bin
+ls
+rm dotfiles-manager
+exit
+exit
+exit
+exit
+cargo r
+cargo r - --sync
+cargo r -- --sync
+cargo r -- --help
+cargo r -- --help
+cargo r -- -V
+gitui
+gt
+fg
+gt
+ci --path .
+dotfiles-manager
+dotfiles-manager --help
+dotfiles-manager -h
+gt
+cr -- --help
+¨ÄCgÐU
+cr -- --help
+cr -- --help
+cr -- --help
+cr -- --help
+cad anyhow
+cd ~/.cache
+cd helix
+cat helix.log
+rustup component add rust-analyzer
+rustup toolchain remove nightly
+cad log
+cd ~/dev/dotfiles-manager
+cad log
+cr
+cr
+cr
+cr
+cr
+cr
+cr
+cr
+cr
+RUST_LOG=info cr
+cad env_logger
+cr
+cr
+cr
+cr
+rm src/utils.rs
+cr
+cr
+paru
+cad owo-colors
+bat ~/.cache/helix/helix.log
+cr
+cr
+cr
+cr
+fg
+cr
+cr
+paru fira
+paru -Q
+paru -Q | sk
+helix ~/.config/kitty/kitty.conf
+kitty --list-fonts | sk
+kitty --debug-font-fallback
+cd ~/dev/dotfiles-manager
+cd
+cd ~/dev/dotfiles-manager
+hx
+hx -v src/main.rs
+bat ~/.cache/helix/helix.log
+rustup toolchain list
+rustup default stable
+rustup update
+rustup component add rust-analyzer
+paru -Qs rust
+fg
+hx
+hx
+hx
+hx
+hx --health rust
+hx
+exit
+exit
+kitty +list-fonts
+kitty +list-fonts | sk
+exit
+exit
+kitty --debug-font-fallback | sk
+kitty --debug-font-fallback
+kitty --config
+kitty --debug-font-fallback
+hx .config/kitty/kitty.conf
+exit
+cr
+cr
+cr
+paru
+rg
+cr
+cr
+cr
+cr
+cd ~/dev/dotfiles-manager
+hx
+exit
+cargo add log
+cargo add pretty_env_logger
+cd ~/dev/dotfiles-manager
+hx
+exit
+cd ~/.config/dotfiles-manager
+ls
+helix config.toml
+cat config.toml
+cat config.toml
+cat config.toml
+exit
+ccl
+co clippy
+ls
+bat Cargo.toml
+rm src/output.rs
+co clippy
+co clippy
+co clippy
+cr
+cr
+cr
+cr
+cr
+cr
+cr
+cr
+freshfetch
+cr
+cr
+cr
+cr
+cr
+RUST_LOG=trace cr
+RUST_LOG=trace cr
+RUST_LOG=trace cr
+RUST_LOG=trace cr
+RUST_LOG=trace cr
+cfm
+cr
+cr
+cr
+cr
+cr
+cr
+cr
+cr
+cr -- --verbose
+cr -- --help
+cr -- -sv
+cr -- --verbose
+rm -rf ~/.config/dots
+cr -- -v
+rm -rf ~/.config/dots
+cr -- -v
+rm -rf ~/.config/dots
+cr -- -v
+cr
+export RUST_LOG=trace
+cr
+cr
+cr
+cr
+rm -rf ~/.config/dots
+cr
+cr
+cr
+tokei
+cr
+cr
+cr
+cr
+gitui
+gt
+gt
+git diff
+gt
+gt
+gt
+rm Cargo.lock
+gt
+git push --force
+gt
+gt
+cd ~/dev/dotfiles-manager
+cargo add log
+cargo add flexi_logger
+hx
+hx
+hx
+cargo check
+cargo clippy
+gt
+hx
+gt
+exit
+git clone git@github.com:rezzubs/dotfiles.git
+git clone git@github.com:rezzubs/dotfiles.git
+paru speedtest
+paru speedtest
+speed
+speedtest
+git clone git@github.com:rezzubs/dotfiles.git
+cd dotfiles
+lsa
+rm .z*
+rm -rf .z*
+ls
+gt
+cd ..
+rm -rf dotfiles
+exit
+paru mold
+helix ~/.cargo/config.toml
+helix ~/.cargo/config.toml
+exit
+cr -- -h
+gt
+cr -- --clean
+ls .config/ | sk
+ls ~/.config/ | sk
+cr -- --clean
+cr -- --clean
+cr -- --clean
+cr -- --clean
+cr -- --clean
+which mold
+cr -- --clean
+cr -- --clean
+paru clang
+paru -S clang
+cr -- --clean
+gt
+cr
+cr
+cr
+cr -- --clean
+cr -- --clean
+cr
+cr
+cr
+cr
+cr
+cr
+cr
+cr
+cr
+cr
+cr
+cr
+cr -- --clean
+cr
+cr -- --clean
+ls
+cr
+RUST_LOG=trace
+cr
+cr
+cr -- --clean
+cr -- -v
+export RUST_LOG=trace
+cr
+cr -- --clean
+cr
+cr -- -h
+ft
+gt
+cr
+cr -- --config
+cr -- --config
+cr
+cr -- --config
+cr -- --config
+cr -- --config
+cr -- --config
+ls
+ls
+cat speedcc.fit
+rm speedcc.fit
+ls
+cd dev/dotfiles-manager
+cd ..
+ls
+ls
+cd dotfiles-manager
+hx
+cd ~/dev/dotfiles-manager
+hx
+exit
+cr -- --config
+cr -- --config
+cr -- --config
+cr -- --clean
+cr
+cr -- --config
+cr -- --config
+cr -- --config
+tokei
+gt
+cr -- --clean
+export RUST_LOG=trace
+cr
+cad shellexpand
+cb
+cr
+cr -- --clean
+cr
+export RUST_LOG=debug
+cr -- --clean
+cr
+cr -- --config
+cr
+cr -- --config
+cr -- --config
+cr -- --config
+gt
+cr
+cr -- --clean
+cr
+cr -- --config
+exit
+mkdir backup
+rm backup
+rm -r backup
+mkdir ~/backup
+cp ~/.config/zsh/ ~/backup
+cp -r ~/.config/zsh/ ~/backup
+exit
+cd 
+cd .cache/dotfiles-manager/
+ls git
+ls
+cd ..
+ls
+ls
+cd dotfiles-manager/
+cd git
+ls
+ls -a
+ls
+cd ..
+rm git
+rm -rf git
+cr -- --clean
+cr
+cr
+gt
+GT
+gt
+gt
+gt
+cr -- --clean
+gt
+cr
+cr
+cr
+cr
+cr
+cr -- --clean
+cr -- --clean
+cr
+cr
+cd dev/dotfiles-manager
+hx
+cd ..
+rm dotfiles-manager
+rm -rf dotfiles-manager
+paru chezmoi
+paru
+paru chezmoi
+zconf
+exit
+ls
+ls -a
+exit
+ls
+ls -a
+git status
+rm .gitignore
+lsa
+ls .var
+ls .config
+git status
+ls
+ls -a
+ls .git
+ls
+git add .
+git satus
+git status
+git remote show
+gt
+git push -u origin main
+ssh -T git@github.com
+exit
+pwd
+cd ..
+find .**/chezmoi
+cd
+find .**/chezmoi
+rm -rf .local/share/chezmoi
+chezmoi help
+cm init git@github.com:user/repo.git\
+
+cm init git@github.com:rezzubs/dotfiles.git
+cm add .zshenv .config/zsh
+cm cd
+ls
+ls
+ls -a
+git reset --hard
+ls
+ls
+lsa
+cd
+ls
+lsa
+cat .gitignore
+cd ..
+cd .config/nvim
+ls
+ls plugin
+cd ..
+ls zsh
+lsa
+cd zsh
+lsa
+cat .zshrc.zni
+mv .zshrc.zni ../../
+rm ~/.zshrc.zni
+lsa
+cat .zcompdump
+exit
+ls
+cd ..
+ls
