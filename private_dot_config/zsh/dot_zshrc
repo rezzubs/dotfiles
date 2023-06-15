@@ -5,6 +5,9 @@ SAVEHIST=10000
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+typeset -U path PATH
+path=(~/.local/bin ~/.cargo/bin $path)
+export PATH
 
 # Additional completion sources
 fpath=($ZDOTDIR/zsh-completions/src $fpath)
