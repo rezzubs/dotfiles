@@ -46,9 +46,12 @@ alias zconf="$EDITOR $ZDOTDIR/.zshrc"
 alias zenv="$EDITOR $HOME/.zshenv"
 alias hx=helix
 alias gt="gitui -t mocha.ron"
-alias cm="chezmoi"
+alias cm=chezmoi
+alias nv=nvim
 
 
 # Syntax highlighting
 source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+
+[ -f "/home/rezzubs/.ghcup/env" ] && source "/home/rezzubs/.ghcup/env" # ghcup-env
