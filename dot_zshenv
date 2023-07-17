@@ -1,3 +1,3 @@
 export ZDOTDIR=$HOME/.config/zsh
-export EDITOR=helix
-export VISUAL=helix
+export EDITOR=nvim
+export VISUAL=nvim
