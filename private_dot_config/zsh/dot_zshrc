@@ -48,6 +48,7 @@ alias hx=helix
 alias gt="gitui -t mocha.ron"
 alias cm=chezmoi
 alias nv=nvim
+alias neovide="env -u WAYLAND_DISPLAY neovide"
 
 
 # Syntax highlighting
