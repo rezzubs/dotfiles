@@ -1,2 +1,2 @@
-.config/nvim/plugin
 .config/zsh/.histfile
+.config/nvim/lazy-lock.json
