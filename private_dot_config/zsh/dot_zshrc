@@ -51,8 +51,12 @@ alias nv=nvim
 alias neovide="env -u WAYLAND_DISPLAY neovide"
 
 skd() {
-  cd $(sk)
+  dir=$(sk)
+  cd $dir 2> /dev/null || cd $(dirname $dir)
 }
+
+# Automatic cd
+setopt autocd
 
 # Syntax highlighting
 source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
