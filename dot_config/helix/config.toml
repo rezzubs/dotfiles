@@ -1,0 +1,18 @@
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "relative"
+cursor-shape = { insert = "bar" }
+bufferline = "multiple"
+# rulers = [81]
+middle-click-paste = false
+indent-guides = { render = true }
+soft-wrap = { enable = true }
+idle-timeout = 0
+
+[editor.statusline]
+right = ["diagnostics", "position", "position-percentage", "file-encoding"]
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
