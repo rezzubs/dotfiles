@@ -1,0 +1,10 @@
+typeset -U path PATH
+path=(
+  ~/.ghcup/bin
+  ~/.cargo/bin
+  ~/.local/bin
+  $path
+)
+export PATH
+export EDITOR=helix
+export VISUAL=helix

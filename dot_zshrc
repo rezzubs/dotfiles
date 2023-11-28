@@ -1,0 +1,29 @@
+# History
+HISTFILE=~/.histfile
+HISTSIZE=50000
+SAVEHIST=50000
+
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+
+# Options
+bindkey -v
+autoload -Uz compinit
+compinit
+
+# Starship
+eval "$(starship init zsh)"
+
+# Alias
+alias hx=helix
+alias ls="ls --color=auto"
+
+# Autosuggestions
+source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Vi mode
+source ~/.config/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+# Syntax highlighting
+source /home/rezzubs/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
