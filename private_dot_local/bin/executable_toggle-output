@@ -29,9 +29,7 @@ def main():
     default = None
     for i, sink in enumerate(sinks):
         split = sink.split()
-        print(split)
         if split[0] == "*":
-            print("test")
             ids.append(int(split[1][:-1]))
             default = i
         else:
