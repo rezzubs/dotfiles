@@ -1,2 +1,2 @@
 #! /bin/bash
-swww img "$(shuf -n 1 -e ~/Pictures/wallpaper/absract/*)"
+swww img --transition-step 10 "$(shuf -n 1 -e ~/Pictures/wallpaper/absract/*)"
