@@ -13,3 +13,10 @@ XDG_DATA_DIRS="${XDG_DATA_DIRS}:$HOME/.local/state/nix/profile/share"
 [ -f "/home/rezzubs/.ghcup/env" ] && source "/home/rezzubs/.ghcup/env" # ghcup-env
 
 alias cm=chezmoi
+alias r=ranger
+export EDITOR=hx
+
+export XMODIFIERS="@im=fcitx"
+export QT_IM_MODULE=fcitx
+export GTK_IM_MODULE=fcitx
+
