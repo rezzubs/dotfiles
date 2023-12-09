@@ -66,5 +66,10 @@ config.colors = {
   }
 }
 
+config.keys = {
+  { key = "k", mods = "ALT", action = wezterm.action.ScrollByLine(-1) },
+  { key = "j", mods = "ALT", action = wezterm.action.ScrollByLine(1) },
+}
+
 -- and finally, return the configuration to wezterm
 return config
