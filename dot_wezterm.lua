@@ -23,7 +23,7 @@ local cp = {
 }
 
 config.color_scheme = 'catppuccin-mocha'
-config.window_background_opacity = 0
+-- config.window_background_opacity = 0
 
 config.font = wezterm.font("JetBrains Mono", { weight = "Medium" })
 config.font_size = 15
