@@ -14,7 +14,7 @@ XDG_DATA_DIRS="${XDG_DATA_DIRS}:$HOME/.local/state/nix/profile/share"
 
 alias cm=chezmoi
 alias r=ranger
-alias ll="ls -lah"
+alias xclip="xclip -selection clipboard"
 export EDITOR=hx
 
 export XMODIFIERS="@im=fcitx"
