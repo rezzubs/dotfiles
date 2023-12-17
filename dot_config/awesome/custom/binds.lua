@@ -8,6 +8,18 @@ local awful = require("awful")
 
 -- KEYBINDS --
 globalkeys = gears.table.join(
+  awful.key({ M.mod, "Shift", "Control" }, "r",
+    function()
+      awful.spawn("loginctl reboot")
+    end
+  ),
+
+  awful.key({}, "Print",
+    function()
+      awful.spawn("flameshot gui")
+    end
+  ),
+
   awful.key({ M.mod }, "s",
     require("awful.hotkeys_popup").show_help,
     { description = "show help", group = "awesome" }
@@ -127,6 +139,21 @@ globalkeys = gears.table.join(
 )
 
 clientkeys = gears.table.join(
+  awful.key({ M.mod }, "Return",
+    function(c)
+      local master = awful.client.getmaster()
+      if c == master then
+        awful.client.setmaster(awful.client.focus.history.get(c.screen, 0))
+      else
+        awful.client.focus.history.add(master)
+        awful.client.setmaster(c)
+      end
+    end,
+    {
+      description = "set client as master or replace with previous.",
+      group = "client",
+    }
+  ),
   awful.key({ M.mod, "Shift" }, "period",
     function(c)
       c:move_to_screen(c.screen.index + 1)

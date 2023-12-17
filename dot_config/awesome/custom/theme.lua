@@ -51,7 +51,7 @@ M.fg_focus = cp.mauve
 M.fg_urgent = cp.yellow
 M.fg_minimize = "#ffffff"
 
-M.useless_gap = 10
+M.useless_gap = 0
 M.border_width = 2
 M.border_normal = cp.base
 M.border_focus = cp.lavender
