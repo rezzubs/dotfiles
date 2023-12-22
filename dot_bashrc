@@ -1,22 +1,24 @@
 # Test for an interactive shell.
 if [[ $- != *i* ]] ; then
-	# Shell is non-interactive.  Be done now!
-	return
+    # Shell is non-interactive.  Be done now!
+    return
 fi
 
 eval "$(starship init bash)"
-set -o vi
-PATH="${PATH}:$HOME/.local/state/nix/profile/bin:$HOME/.local/bin:"
-XDG_DATA_DIRS="${XDG_DATA_DIRS}:$HOME/.local/state/nix/profile/share"
+PATH="${PATH}:${HOME}/.local/state/nix/profile/bin:${HOME}/.local/bin:${HOME}/.emacs.d/bin:"
+XDG_DATA_DIRS="${XDG_DATA_DIRS}:${HOME}/.local/state/nix/profile/share"
 
-. "$HOME/.cargo/env" # rustup env
-[ -f "/home/rezzubs/.ghcup/env" ] && source "/home/rezzubs/.ghcup/env" # ghcup-env
+[ -f "/home/rezzubs/.cargo/env" ] && . "$HOME/.cargo/env" # rustup env
+[ -f "/home/rezzubs/.ghcup/env" ] && . "/home/rezzubs/.ghcup/env" # ghcup-env
 
 alias cm=chezmoi
 alias r=ranger
 alias xclip="xclip -selection clipboard"
-export EDITOR=hx
+alias ll="ls -la"
+
+export EDITOR=vim
 
 export XMODIFIERS="@im=fcitx"
 export QT_IM_MODULE=fcitx
 export GTK_IM_MODULE=fcitx
+
