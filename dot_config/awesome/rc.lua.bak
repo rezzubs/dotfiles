@@ -1,0 +1,30 @@
+require("awful.autofocus")
+local awful = require("awful")
+local beautiful = require("beautiful")
+local menubar = require("menubar")
+
+Terminal = "wezterm"
+menubar.utils.Terminal = Terminal -- Set the terminal for applications that require it
+
+beautiful.init(require("custom.theme"))
+
+require("custom.notifications")
+
+-- shared layouts
+awful.layout.layouts = {
+  awful.layout.suit.max,
+}
+
+awful.screen.connect_for_each_screen(function(s)
+  -- Default layout for each screen
+  local layout = (s.index == 2)
+      and awful.layout.suit.tile.left
+      or awful.layout.suit.tile.right
+  awful.tag({ "1", "2", "3", "4", "5", "6" }, s, layout)
+end)
+
+require("custom.binds")
+
+require("custom.rules")
+
+require("custom.signals")

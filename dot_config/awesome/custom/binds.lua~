@@ -10,7 +10,7 @@ local awful = require("awful")
 globalkeys = gears.table.join(
   awful.key({ M.mod }, "e",
     function()
-      awful.spawn("emacsclient -c --alternate-editor emacs")
+      awful.spawn("emacsclient -r --socket-name=/tmp/emacs1000/server")
     end
   ),
 
@@ -211,7 +211,28 @@ clientkeys = gears.table.join(
   awful.key({ M.mod }, "t",
     function(c) c.ontop = not c.ontop end,
     { description = "toggle keep on top", group = "client" }
-  )
+  ),
+
+  awful.key({ M.mod }, "m",
+    function(c)
+      c.maximized = not c.maximized
+      c:raise()
+    end,
+    { description = "(un)maximize", group = "client" }),
+
+  awful.key({ M.mod, "Control" }, "m",
+    function(c)
+      c.maximized_vertical = not c.maximized_vertical
+      c:raise()
+    end,
+    { description = "(un)maximize vertically", group = "client" }),
+
+  awful.key({ M.mod, "Shift" }, "m",
+    function(c)
+      c.maximized_horizontal = not c.maximized_horizontal
+      c:raise()
+    end,
+    { description = "(un)maximize horizontally", group = "client" })
 )
 
 -- Bind all key numbers to tags.
