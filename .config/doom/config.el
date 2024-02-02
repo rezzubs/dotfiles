@@ -85,6 +85,7 @@
 
 (display-time-mode)
 
+;; misc
 (use-package! avy
   :bind (("C-:" . avy-goto-word-1)))
 
@@ -93,3 +94,13 @@
 
 (use-package! rustic
   :custom (lsp-rust-analyzer-cargo-watch-command "clippy"))
+
+;; org-mode
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/org/todo.org" "Inbox")
+         "* TODO %?\n  %i\n  %a" :prepend t)
+        ("j" "Journal" entry (file+datetree "~/org/journal.org")
+         "* %?\nEntered on %U\n  %i\n  %a")))
+
+
+(setq org-todo-keywords '((sequence "TODO" "DONE")))
