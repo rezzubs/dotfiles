@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if pgrep -x "kmonad" > /dev/null; then
+    killall kmonad
+else
+    exec kmonad ~/.kmonad.kbd > /dev/null 2>&1
+fi
