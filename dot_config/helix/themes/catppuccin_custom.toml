@@ -1,4 +1,0 @@
-inherits = "catppuccin_mocha"
-"ui.background" = {}
-"ui.statusline" = {}
-
