@@ -19,8 +19,9 @@ alias e="emacsclient -t"
 alias ec="emacsclient -c"
 export EDITOR=vim
 
-export XMODIFIERS="@im=fcitx"
-export QT_IM_MODULE=fcitx
-export GTK_IM_MODULE=fcitx
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+
 
 [ -f "/home/rezzubs/.ghcup/env" ] && source "/home/rezzubs/.ghcup/env" # ghcup-env
