@@ -3,6 +3,7 @@ import Data.Ratio ((%))
 import System.Exit (exitSuccess)
 import XMonad
 import XMonad.Hooks.EwmhDesktops (ewmh, ewmhFullscreen)
+import XMonad.Hooks.SetWMName
 import XMonad.Layout.NoBorders (noBorders)
 import XMonad.Layout.PerWorkspace
 import XMonad.Layout.Spacing (spacingWithEdge)
@@ -66,6 +67,7 @@ layouts =
    in onWorkspace "1" (full ||| tiled) (tiled ||| full)
 
 startup = do
+  setWMName "LG3D"
   spawn "discord"
   spawn "emacs"
   setDefaultCursor xC_left_ptr
