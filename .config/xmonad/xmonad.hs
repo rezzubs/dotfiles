@@ -50,7 +50,8 @@ keybinds conf@(XConfig {XMonad.modMask = modKey}) =
       ((modKey, xK_q), spawn "xmonad --recompile && xmonad --restart"), -- Restart xmonad
       ((modKey .|. shiftMask .|. controlMask, xK_r), spawn "loginctl reboot"), -- reboot pc
       ((modKey .|. shiftMask .|. controlMask, xK_s), spawn "loginctl poweroff"), -- shut down pc
-      ((modKey .|. shiftMask, xK_s), spawn "loginctl suspend") -- suspend pc
+      ((modKey .|. shiftMask, xK_s), spawn "loginctl suspend"), -- suspend pc
+      ((modKey .|. shiftMask, xK_s), spawn "pa-toggle-output")
     ]
       <> [ ((m .|. modKey, k), windows $ f i)
            | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9],

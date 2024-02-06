@@ -1,0 +1,29 @@
+#!/usr/bin/env python
+
+from subprocess import run
+
+
+def parse_sink(str):
+    sink = str.split()
+    return {"name": sink[1], "id": sink[0]}
+
+
+sinks = (
+    run(["pactl", "list", "short", "sinks"], capture_output=True, check=True)
+    .stdout.decode()
+    .splitlines()
+)
+
+default = (
+    run(["pactl", "get-default-sink"], capture_output=True, check=True)
+    .stdout.decode()
+    .strip()
+)
+
+sinks = [parse_sink(sink) for sink in sinks if "Samson" not in sink]
+
+new_sink = [x for x in sinks if x["name"] != default][0]
+
+print(f"switching from\n{default} to\n{new_sink['name']}")
+
+run(["pactl", "set-default-sink", new_sink["id"]], check=True)
