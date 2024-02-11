@@ -96,6 +96,7 @@ bindsym $mod+a focus parent
 
 bindsym $mod+Shift+b exec firefox-bin
 bindsym $mod+Shift+d exec discord
+bindsym Print exec grimshot copy area
 
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show

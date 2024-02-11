@@ -120,6 +120,7 @@ bindsym $mod+a focus parent
 #+begin_src conf
 bindsym $mod+Shift+b exec firefox-bin
 bindsym $mod+Shift+d exec discord
+bindsym Print exec grimshot copy area
 #+end_src
 ** Scratchpad
 #+begin_src conf
