@@ -10,8 +10,6 @@ PATH="${HOME}/scripts/:${HOME}/.config/emacs/bin:${HOME}/.local/bin:${PATH}:"
 
 export QT_QPA_PLATFORM=xcb
 
-eval "$(zoxide init bash)"
-
 alias ll="ls -la"
 
 # Change directory interactively
