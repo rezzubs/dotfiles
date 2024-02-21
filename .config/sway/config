@@ -1,4 +1,4 @@
-# Variables {{{
+# VARIABLES
 set $mod Mod4
 set $left h
 set $down j
@@ -8,16 +8,15 @@ set $right l
 set $term alacritty
 set $menu wofi --show drun | xargs swaymsg exec --
 set $scripts /home/rezzubs/scripts
-# }}}
 
 output * bg ~/Pictures/wallpaper/firefly.png fill
 
 output DP-2 mode 2560x1440@84.983Hz pos 0 0
 output DP-1 mode 2560x1440 pos 2560 0
 
+# AUTOSTART
 exec kmonad .kmonad.kbd
 exec gentoo-pipewire-launcher
-exec emacs
 exec fcitx5 -d
 exec swaync
 
@@ -30,6 +29,7 @@ input type:pointer {
     pointer_accel -0.7
 }
 
+# BINDINGS
 bindsym $mod+t exec $term
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
@@ -51,6 +51,7 @@ bindsym $mod+Shift+c reload
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+e exec swaynag -t warning -m "You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session." -B "Yes, exit sway" "swaymsg exit"
 
+# Power
 bindsym $mod+Shift+Ctrl+s exec loginctl poweroff
 bindsym $mod+Shift+s exec loginctl suspend
 bindsym $mod+Shift+Ctrl+r exec loginctl reboot
@@ -103,11 +104,13 @@ bindsym $mod+space focus mode_toggle
 
 bindsym $mod+a focus parent
 
+# Applications
 bindsym $mod+Shift+b exec firefox-bin
 bindsym $mod+Shift+d exec discord
 bindsym Print exec grimshot copy area
 bindsym $mod+Shift+o exec pavucontrol
 
+# Scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
