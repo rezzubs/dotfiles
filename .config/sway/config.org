@@ -17,15 +17,16 @@ set $scripts /home/rezzubs/scripts
 #+begin_src conf
 output * bg ~/Pictures/wallpaper/firefly.png fill
 
-output DP-2 mode 2560x1440 pos 0 0
+output DP-2 mode 2560x1440@84.983Hz pos 0 0
 output DP-1 mode 2560x1440 pos 2560 0
 #+end_src
 * Autostart
 #+begin_src conf
-exec kmonad .kmonad.kbd &
-exec gentoo-pipewire-launcher &
-exec emacs &
-exec fcitx5 -d &
+exec kmonad .kmonad.kbd
+exec gentoo-pipewire-launcher
+exec emacs
+exec fcitx5 -d
+exec swaync
 #+end_src
 * TODO Idle
 * Input
@@ -33,6 +34,10 @@ exec fcitx5 -d &
 input type:keyboard {
     xkb_layout ee
     xkb_variant us
+}
+
+input type:pointer {
+    pointer_accel -0.7
 }
 #+end_src
 * Bindings
@@ -43,6 +48,8 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
 
 bindsym $mod+o exec $scripts/pa-toggle-output
+bindsym $mod+g gaps inner all toggle 10
+bindsym $mod+Shift+n exec swaync-client -t -sw
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -121,6 +128,7 @@ bindsym $mod+a focus parent
 bindsym $mod+Shift+b exec firefox-bin
 bindsym $mod+Shift+d exec discord
 bindsym Print exec grimshot copy area
+bindsym $mod+Shift+o exec pavucontrol
 #+end_src
 ** Scratchpad
 #+begin_src conf
