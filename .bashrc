@@ -23,3 +23,5 @@ d() {
 }
 alias dr="d /"
 alias dh="d ~"
+
+alias lg="lazygit"
