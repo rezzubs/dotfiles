@@ -288,3 +288,18 @@
     :hook (prog-mode . rainbow-delimiters-mode))
 
 #+end_src
+* GIT-GUTTER
+[[https://ianyepan.github.io/posts/emacs-git-gutter/][Guide]]
+#+begin_src elisp
+  (use-package git-gutter
+    :ensure t
+    :config (global-git-gutter-mode 1))
+
+  (use-package git-gutter-fringe
+    :ensure t
+    :config
+    (define-fringe-bitmap 'git-gutter-fr:added [224] nil nil '(center repeated))
+    (define-fringe-bitmap 'git-gutter-fr:modified [224] nil nil '(center repeated))
+    (define-fringe-bitmap 'git-gutter-fr:deleted [128 192 224 240] nil nil 'bottom))
+#+end_src
+
