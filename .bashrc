@@ -14,7 +14,7 @@ alias ll="ls -la"
 
 # Change directory interactively
 d() {
-	path=$(sk -c "fd . ${1:-.} -td")
+	path=$(fd . ${1:-.} -td -H | fzf)
 	if [[ -n $path ]]; then
 		cd $path
 	fi
