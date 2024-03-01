@@ -29,6 +29,10 @@ input type:pointer {
     pointer_accel -0.7
 }
 
+input type:touchpad {
+    natural_scroll enabled
+}
+
 # BINDINGS
 bindsym $mod+t exec $term
 bindsym $mod+Shift+q kill
