@@ -6,7 +6,7 @@ fi
 
 eval "$(starship init bash)"
 
-PATH="${HOME}/scripts/:${HOME}/.config/emacs/bin:${HOME}/.local/bin:${PATH}:"
+PATH="${HOME}/scripts/:${HOME}/.local/bin:${PATH}:"
 
 export QT_QPA_PLATFORM=xcb
 
