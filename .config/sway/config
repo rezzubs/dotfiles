@@ -29,6 +29,10 @@ input type:pointer {
     pointer_accel -0.7
 }
 
+input type:touchpad {
+    natural_scroll enabled
+}
+
 # BINDINGS
 bindsym $mod+t exec $term
 bindsym $mod+Shift+q kill
@@ -119,7 +123,8 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+    # status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+    status_command while ~/.config/sway/bar_status.sh; do sleep 1; done
 
     colors {
         statusline #cdd6f4
