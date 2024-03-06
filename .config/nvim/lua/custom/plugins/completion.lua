@@ -14,6 +14,9 @@ return { -- Autocompletion
 				end
 				return "make install_jsregexp"
 			end)(),
+			dependencies = {
+				"rafamadriz/friendly-snippets",
+			},
 		},
 		"saadparwaiz1/cmp_luasnip",
 
@@ -33,6 +36,9 @@ return { -- Autocompletion
 		-- See `:help cmp`
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
+
+		require("luasnip.loaders.from_vscode").lazy_load()
+
 		luasnip.config.setup({})
 
 		cmp.setup({
