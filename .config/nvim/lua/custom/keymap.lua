@@ -34,3 +34,5 @@ vim.keymap.set({ "i", "c" }, "<M-f>", "<C-Right>")
 vim.keymap.set("i", "<C-a>", "<Esc>0i")
 vim.keymap.set("i", "<C-e>", "<Esc>$i")
 vim.keymap.set({ "i", "c" }, "<C-d>", "<Esc>lxi")
+
+Nmap("<leader>e", ":E<Return>", { desc = "netrw" })
