@@ -65,6 +65,7 @@ return {
 					},
 				},
 			},
+			emmet_language_server = {},
 		}
 
 		require("mason").setup()
