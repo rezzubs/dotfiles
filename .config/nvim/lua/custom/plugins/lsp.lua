@@ -66,11 +66,12 @@ return {
 				},
 			},
 			emmet_language_server = {},
+			gleam = {},
 		}
 
 		require("mason").setup()
 
-		local ensure_installed = vim.list_slice(vim.tbl_keys(servers or {}), 2) -- exclude rust_analyzer
+		local ensure_installed = {} -- vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
 			"stylua", -- Used to format lua code
 		})
