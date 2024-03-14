@@ -20,6 +20,8 @@ exec gentoo-pipewire-launcher
 exec fcitx5 -d
 exec swaync
 
+default_border pixel 2
+
 input type:keyboard {
     xkb_layout ee
     xkb_variant us
