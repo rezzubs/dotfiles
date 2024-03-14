@@ -14,4 +14,4 @@ alias ll="ls -la"
 
 alias lg="lazygit"
 
-eval "$(zoxide init bash)"
+eval "$(zoxide init bash --cmd cd)"
