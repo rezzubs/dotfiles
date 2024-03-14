@@ -16,6 +16,10 @@ require("custom.options")
 require("custom.keymap")
 require("custom.autocommands")
 
+if vim.g.neovide then
+	require("custom.neovide")
+end
+
 -- Bootstrap lazy.nvim
 -- :help lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
