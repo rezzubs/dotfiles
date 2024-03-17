@@ -15,3 +15,5 @@ alias ll="ls -la"
 alias lg="lazygit"
 
 eval "$(zoxide init bash --cmd cd)"
+
+[ -f "/home/rezzubs/.ghcup/env" ] && . "/home/rezzubs/.ghcup/env" # ghcup-env
