@@ -22,3 +22,4 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 set_indent("html", 2)
+set_indent("gleam", 2)
