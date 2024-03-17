@@ -5,7 +5,7 @@ set $down j
 set $up k
 set $right l
 
-set $term alacritty
+set $term kitty
 set $menu wofi --show drun | xargs swaymsg exec --
 set $scripts /home/rezzubs/scripts
 
@@ -126,7 +126,8 @@ bar {
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     # status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-    status_command while ~/.config/sway/bar_status.sh; do sleep 1; done
+    # status_command while ~/.config/sway/bar_status.sh; do sleep 1; done
+    status_command i3blocks
 
     colors {
         statusline #cdd6f4
@@ -136,6 +137,8 @@ bar {
         focused_workspace #b4befe #b4befe #11111b
         urgent_workspace #f9e2af #f9e2af #11111b
     }
+
+    separator_symbol |
 }
 
 client.focused #b4befe #b4befe #11111b #cba6f7
