@@ -10,6 +10,8 @@ return {
 		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
+		local lsp = require("lspconfig")
+
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
 			callback = function(event)
@@ -67,16 +69,15 @@ return {
 			},
 			emmet_language_server = {},
 			gleam = {},
+			hls = {},
 		}
 
 		require("mason").setup()
-
-		local ensure_installed = {} -- vim.tbl_keys(servers or {})
-		vim.list_extend(ensure_installed, {
+		local ensure_installed = {
 			"stylua", -- Used to format lua code
-		})
+		}
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
-
+		-- setup servers installed with mason
 		require("mason-lspconfig").setup({
 			handlers = {
 				function(server_name)
@@ -85,9 +86,14 @@ return {
 					-- by the server configuration above. Useful when disabling
 					-- certain features of an LSP (for example, turning off formatting for tsserver)
 					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-					require("lspconfig")[server_name].setup(server)
+					lsp[server_name].setup(server)
 				end,
 			},
 		})
+
+		for name, config in pairs(servers) do
+			config.capabilities = vim.tbl_deep_extend("force", {}, capabilities, config.capabilities or {})
+			lsp[name].setup(config)
+		end
 	end,
 }
