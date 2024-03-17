@@ -37,3 +37,5 @@ vim.keymap.set({ "i", "c" }, "<C-d>", "<Esc>lxi")
 
 Nmap("<leader>e", ":E<Return>", { desc = "netrw" })
 Nmap("<leader>l", ":Lazy<Return>")
+
+Nmap(";", ":")
