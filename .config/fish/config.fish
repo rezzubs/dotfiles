@@ -6,5 +6,7 @@ if status is-interactive
 
     fish_add_path ~/.local/bin
 
+    set EDITOR nvim
+
     source "$HOME/.cargo/env.fish"
 end
