@@ -70,6 +70,7 @@ return {
 			emmet_language_server = {},
 			gleam = {},
 			hls = {},
+			bashls = {},
 		}
 
 		require("mason").setup()

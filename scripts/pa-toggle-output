@@ -1,29 +1,14 @@
-#!/usr/bin/env python
+#!/usr/bin/env bash
 
-from subprocess import run
+default="$(pactl get-default-sink)"
 
+while read -r sink; do
+    sink=($sink)
+    id="${sink[0]}}";
+    name="${sink[1]}"
 
-def parse_sink(str):
-    sink = str.split()
-    return {"name": sink[1], "id": sink[0]}
+    [[ "$name" == "$default" || $name =~ "Samson" ]] && continue
 
-
-sinks = (
-    run(["pactl", "list", "short", "sinks"], capture_output=True, check=True)
-    .stdout.decode()
-    .splitlines()
-)
-
-default = (
-    run(["pactl", "get-default-sink"], capture_output=True, check=True)
-    .stdout.decode()
-    .strip()
-)
-
-sinks = [parse_sink(sink) for sink in sinks if "Samson" not in sink]
-
-new_sink = [x for x in sinks if x["name"] != default][0]
-
-print(f"switching from\n{default} to\n{new_sink['name']}")
-
-run(["pactl", "set-default-sink", new_sink["id"]], check=True)
+    pactl set-default-sink "$id" && echo "switching to $name"
+    break
+done <<< "$(pactl list short sinks)"

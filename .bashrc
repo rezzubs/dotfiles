@@ -6,15 +6,17 @@ fi
 
 eval "$(starship init bash)"
 
-PATH="${HOME}/scripts/:${HOME}/.local/bin:${PATH}:"
+add_to_path=(
+    "${HOME}/scripts"
+    "${HOME}/.local/bin"
+)
 
-export QT_QPA_PLATFORM=xcb
+for p in "${add_to_path[@]}"; do
+    PATH="${p}:${PATH}"
+done
 
+alias ls="ls --color=auto"
 alias ll="ls -la"
-
 alias lg="lazygit"
 
 eval "$(zoxide init bash --cmd cd)"
-
-[ -f "/home/rezzubs/.ghcup/env" ] && . "/home/rezzubs/.ghcup/env" # ghcup-env
-. "$HOME/.cargo/env"
