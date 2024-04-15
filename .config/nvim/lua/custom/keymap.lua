@@ -8,7 +8,6 @@ Nmap("<Esc>", "<cmd>nohlsearch<CR>")
 -- Diagnostic keymaps
 Nmap("[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
 Nmap("]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
-Nmap("<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 Nmap("<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
@@ -35,7 +34,6 @@ vim.keymap.set("i", "<C-a>", "<Esc>0i")
 vim.keymap.set("i", "<C-e>", "<Esc>$i")
 vim.keymap.set({ "i", "c" }, "<C-d>", "<Esc>lxi")
 
-Nmap("<leader>e", ":E<Return>", { desc = "netrw" })
 Nmap("<leader>l", ":Lazy<Return>")
 
 Nmap(";", ":")
