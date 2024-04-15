@@ -15,6 +15,11 @@ for p in "${add_to_path[@]}"; do
     PATH="${p}:${PATH}"
 done
 
+export EDITOR=nvim
+export VISUAL="$EDITOR"
+
+
+alias vimdiff="nvim -d"
 alias ls="ls --color=auto"
 alias ll="ls -la"
 alias lg="lazygit"
