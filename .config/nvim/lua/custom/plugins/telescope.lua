@@ -11,10 +11,11 @@ return { -- Fuzzy Finder (files, lsp, etc)
 				return vim.fn.executable("make") == 1
 			end,
 		},
-		{ "nvim-telescope/telescope-ui-select.nvim" },
+		"nvim-telescope/telescope-ui-select.nvim",
 
 		-- Pretty icons
-		{ "nvim-tree/nvim-web-devicons" },
+		"nvim-tree/nvim-web-devicons",
+		"debugloop/telescope-undo.nvim",
 	},
 	config = function()
 		require("telescope").setup({
@@ -22,12 +23,14 @@ return { -- Fuzzy Finder (files, lsp, etc)
 				["ui-select"] = {
 					require("telescope.themes").get_dropdown(),
 				},
+				undo = {},
 			},
 		})
 
 		-- Enable telescope extensions, if they are installed
 		pcall(require("telescope").load_extension, "fzf")
 		pcall(require("telescope").load_extension, "ui-select")
+		pcall(require("telescope").load_extension, "undo")
 
 		-- See `:help telescope.builtin`
 		local builtin = require("telescope.builtin")
@@ -39,6 +42,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 		Nmap("<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
 		Nmap("<leader>fr", builtin.oldfiles, { desc = "[F]ind [R]ecent Files" })
 		Nmap("<leader>fb", builtin.buffers, { desc = "[F]ind existing [B]uffers" })
+		Nmap("<leader>u", "<cmd>Telescope undo<cr>", { desc = "[U]ndo tree" })
 
 		-- Slightly advanced example of overriding default behavior and theme
 		Nmap("<leader>/", function()

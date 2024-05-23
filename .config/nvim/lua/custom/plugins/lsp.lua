@@ -22,7 +22,7 @@ return {
 				map("gd", require("telescope.builtin").lsp_definitions, "[G]o to [D]efinition")
 				map("gr", require("telescope.builtin").lsp_references, "[G]o to [R]eferences")
 				map("gI", require("telescope.builtin").lsp_implementations, "[G]o to [I]mplementation")
-				map("gtd", require("telescope.builtin").lsp_type_definitions, "[G]o to [T]ype [D]efinition")
+				map("gt", require("telescope.builtin").lsp_type_definitions, "[G]o to [T]ype definition")
 				map("gD", vim.lsp.buf.declaration, "[G]o to [D]eclaration")
 
 				map("<leader>cs", require("telescope.builtin").lsp_document_symbols, "Document [S]ymbols")
