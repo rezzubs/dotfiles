@@ -52,5 +52,7 @@ alias ls="ls --color"
 alias ll="ls -la"
 alias lg="lazygit"
 
+export EDITOR=nvim
+
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh --cmd cd)"
