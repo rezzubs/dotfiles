@@ -71,6 +71,7 @@ return {
 			gleam = {},
 			hls = {},
 			bashls = {},
+			zls = {},
 		}
 
 		require("mason").setup()
