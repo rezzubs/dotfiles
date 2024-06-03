@@ -1,4 +1,4 @@
 #!/bin/env bash
 wallpaper_dir="$(realpath ~/Pictures/wallpaper/abstract/)"
 image="$(ls -1 "$wallpaper_dir" | shuf -n1)"
-swww img "${wallpaper_dir}/${image}"
+swaybg -i "${wallpaper_dir}/${image}"
