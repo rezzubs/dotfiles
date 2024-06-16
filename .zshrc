@@ -51,6 +51,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 alias ls="ls --color"
 alias ll="ls -la"
 alias lg="lazygit"
+alias hx="helix"
 
 export EDITOR=nvim
 

@@ -1,0 +1,28 @@
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "relative"
+cursorline = true
+completion-timeout = 5
+completion-trigger-len = 1
+rulers = [81]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.lsp]
+goto-reference-include-declaration = false
+
+[editor.whitespace.render]
+tab = "all"
+nbsp = "all"
+nnbsp = "all"
+
+[editor.indent-guides]
+render = true
+skip-levels = 1
+
+[keys.insert.j]
+k = "normal_mode"
