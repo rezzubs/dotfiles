@@ -37,3 +37,6 @@ vim.keymap.set({ "i", "c" }, "<C-d>", "<Esc>lxi")
 Nmap("<leader>l", ":Lazy<Return>")
 
 Nmap(";", ":")
+
+Nmap("H", ":bn<Return>")
+Nmap("L", ":bp<Return>")

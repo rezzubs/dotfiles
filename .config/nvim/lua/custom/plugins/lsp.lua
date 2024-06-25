@@ -67,6 +67,7 @@ return {
 					},
 				},
 			},
+			tsserver = {},
 			emmet_language_server = {},
 			gleam = {},
 			hls = {},
