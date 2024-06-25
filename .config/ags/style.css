@@ -1,0 +1,61 @@
+entry {
+    background-color: #181825;
+    border: none;
+    border-color: red;
+}
+
+* {
+    color: #cdd6f4;
+    font-family: "Rubik";
+}
+
+.subtext {
+    color: #a6adc8;
+}
+
+.primary_label {
+    font-size: 14pt;
+    font-weight: 700;
+}
+
+.common_window {
+    border-radius: 12px;
+    background-color: #1e1e2e;
+}
+
+.launcher_box {
+    padding: 20px;
+}
+
+.launcher_button {
+    background-color: #313244;
+    border-radius: 12px;
+}
+
+.launcher_button:focus {
+    margin-left: 12px;
+    background-color: #45475a;
+    border: none;
+}
+
+.launcher_search {
+    font-size: 14pt;
+}
+
+.time {
+    font-size: 18pt;
+    font-weight: 700;
+}
+
+.notheme {
+    background: none;
+    border: none;
+}
+
+.progress {
+    font-size: 6px;
+    min-height: 26px;
+    min-width: 26px;
+    background-color: #181825;
+    color: #cba6f7;
+}
