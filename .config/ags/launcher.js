@@ -1,4 +1,5 @@
 const { query } = await Service.import("applications");
+const battery = await Service.import("battery");
 const network = await Service.import("network");
 const audio = await Service.import("audio");
 const WINDOW_NAME = "launcher";
@@ -14,24 +15,93 @@ async function getMemory() {
     return parseFloat(used) / parseFloat(total);
 }
 
-const Memory = () => {
-    return Widget.CircularProgress({
-        class_name: "progress",
-        value: 0,
-        rounded: true,
-    }).poll(5000, (self) => {
-        getMemory().then((mem) => {
-            self.value = mem;
-            self.tooltip_text = `Memory: ${(mem * 100).toPrecision(3)}%`;
-        });
+const PANEL_ICON_SIZE = 20;
+
+const Memory = Widget.CircularProgress({
+    class_name: "progress",
+    value: 0,
+    rounded: true,
+}).poll(5000, (self) => {
+    getMemory().then((mem) => {
+        self.value = mem;
+        self.tooltip_text = `Memory: ${(mem * 100).toPrecision(3)}%`;
     });
-};
+});
+
+const Battery = Widget.Box({
+    class_name: "info_button",
+    children: [
+        Widget.Icon({
+            icon: Utils.merge(
+                [battery.bind("icon_name"), battery.bind("charged")],
+                (icon, charged) =>
+                    charged ? "battery-full-charged-symbolic" : icon,
+            ),
+            // visible: battery.bind("available"),
+            tooltip_text: battery.bind("percent").as((x) => x + "%"),
+            size: PANEL_ICON_SIZE,
+        }),
+    ],
+});
+
+const Network = Widget.Button({
+    class_names: ["notheme", "info_button"],
+    child: Widget.Icon({
+        icon: Utils.merge(
+            [
+                network.bind("primary"),
+                network.wired.bind("icon_name"),
+                network.wifi.bind("icon_name"),
+            ],
+            (primary, wired, wireless) => {
+                return primary == "wired" ? wired : wireless;
+            },
+        ),
+        size: 20,
+        tooltip_text: network.wifi.bind("ssid").as((ssid) => ssid ?? ""),
+    }),
+});
+
+const Volume = Widget.Button({
+    class_names: ["notheme", "info_button"],
+    child: Widget.Icon({
+        cursor: "pointer",
+        icon: Utils.merge(
+            [audio.speaker.bind("volume"), audio.speaker.bind("is_muted")],
+            (volume, muted) => {
+                if (muted) {
+                    return "audio-volume-muted-symbolic";
+                } else if (volume > 0.6) {
+                    return "audio-volume-high-symbolic";
+                } else if (volume > 0.4) {
+                    return "audio-volume-medium-symbolic";
+                } else {
+                    return "audio-volume-low-symbolic";
+                }
+            },
+        ),
+        tooltip_text: audio.speaker
+            .bind("volume")
+            .as((vol) => `Volume: ${vol}%`),
+        size: PANEL_ICON_SIZE,
+    }),
+    on_clicked: () => {
+        Utils.execAsync("pavucontrol");
+        App.closeWindow(WINDOW_NAME);
+    },
+    on_scroll_up: () => {
+        Utils.execAsync("pactl set-sink-volume @DEFAULT_SINK@ +5%");
+    },
+    on_scroll_down: () => {
+        Utils.execAsync("pactl set-sink-volume @DEFAULT_SINK@ -5%");
+    },
+});
 
 const InfoPanel = Widget.Box({
     hpack: "fill",
     children: [
         Widget.Box({
-            children: [Memory()],
+            children: [Memory],
         }),
         Widget.Box({
             hpack: "center",
@@ -48,65 +118,7 @@ const InfoPanel = Widget.Box({
         }),
         Widget.Box({
             spacing: 6,
-            children: [
-                Widget.Icon({
-                    icon: Utils.merge(
-                        [
-                            network.bind("primary"),
-                            network.wired.bind("icon_name"),
-                            network.wifi.bind("icon_name"),
-                        ],
-                        (primary, wired, wireless) => {
-                            return primary == "wired" ? wired : wireless;
-                        },
-                    ),
-                    size: 20,
-                    tooltip_text: network.wifi
-                        .bind("ssid")
-                        .as((ssid) => ssid ?? ""),
-                }),
-                Widget.Button({
-                    class_name: "notheme",
-                    child: Widget.Icon({
-                        cursor: "pointer",
-                        icon: Utils.merge(
-                            [
-                                audio.speaker.bind("volume"),
-                                audio.speaker.bind("is_muted"),
-                            ],
-                            (volume, muted) => {
-                                if (muted) {
-                                    return "audio-volume-muted-symbolic";
-                                } else if (volume > 0.6) {
-                                    return "audio-volume-high-symbolic";
-                                } else if (volume > 0.4) {
-                                    return "audio-volume-medium-symbolic";
-                                } else {
-                                    return "audio-volume-low-symbolic";
-                                }
-                            },
-                        ),
-                        tooltip_text: audio.speaker
-                            .bind("volume")
-                            .as((vol) => `Volume: ${vol}%`),
-                        size: 20,
-                    }),
-                    on_clicked: () => {
-                        Utils.execAsync("pavucontrol");
-                        App.closeWindow(WINDOW_NAME);
-                    },
-                    on_scroll_up: () => {
-                        Utils.execAsync(
-                            "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-                        );
-                    },
-                    on_scroll_down: () => {
-                        Utils.execAsync(
-                            "pactl set-sink-volume @DEFAULT_SINK@ -5%",
-                        );
-                    },
-                }),
-            ],
+            children: [Battery, Network, Volume],
         }),
     ],
 });

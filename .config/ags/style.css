@@ -1,12 +1,12 @@
+* {
+    color: #cdd6f4;
+    font-family: "Rubik";
+}
+
 entry {
     background-color: #181825;
     border: none;
     border-color: red;
-}
-
-* {
-    color: #cdd6f4;
-    font-family: "Rubik";
 }
 
 .subtext {
@@ -50,6 +50,13 @@ entry {
 .notheme {
     background: none;
     border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.info_button {
+    min-height: 25px;
+    min-width: 25px;
 }
 
 .progress {
