@@ -23,6 +23,16 @@ return { -- Fuzzy Finder (files, lsp, etc)
 				},
 				undo = {},
 			},
+			defaults = {
+				layout_strategy = "horizontal",
+				layout_config = {
+					horizontal = {
+						width = { padding = 0 },
+						height = { padding = 0 },
+						preview_width = 0.5,
+					},
+				},
+			},
 		})
 
 		-- Enable telescope extensions, if they are installed
