@@ -19,18 +19,16 @@ return {
 					vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 				end
 
-				map("gd", require("telescope.builtin").lsp_definitions, "[G]o to [D]efinition")
-				map("gr", require("telescope.builtin").lsp_references, "[G]o to [R]eferences")
-				map("gI", require("telescope.builtin").lsp_implementations, "[G]o to [I]mplementation")
-				map("gt", require("telescope.builtin").lsp_type_definitions, "[G]o to [T]ype definition")
-				map("gD", vim.lsp.buf.declaration, "[G]o to [D]eclaration")
-
-				map("<leader>cs", require("telescope.builtin").lsp_document_symbols, "Document [S]ymbols")
-				map("<leader>cS", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Workspace [S]ymbols")
-				map("<leader>cr", vim.lsp.buf.rename, "[R]eame")
-				map("<leader>ca", vim.lsp.buf.code_action, "Code [A]ction")
-
-				map("K", vim.lsp.buf.hover, "Hover Documentation")
+				map("gd", require("telescope.builtin").lsp_definitions, "Go to definition")
+				map("gr", require("telescope.builtin").lsp_references, "Go to references")
+				map("gI", require("telescope.builtin").lsp_implementations, "Go to implementation")
+				map("gt", require("telescope.builtin").lsp_type_definitions, "Go to type definition")
+				map("gD", vim.lsp.buf.declaration, "Go to Declaration")
+				map("<leader>cs", require("telescope.builtin").lsp_document_symbols, "Document symbols")
+				map("<leader>cS", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Workspace symbols")
+				map("<leader>cr", vim.lsp.buf.rename, "Reame")
+				map("<leader>ca", vim.lsp.buf.code_action, "Code action")
+				map("K", vim.lsp.buf.hover, "Hover documentation")
 
 				-- The following two autocommands are used to highlight references of the
 				-- word under your cursor when your cursor rests there for a little while.
@@ -73,21 +71,22 @@ return {
 			hls = {},
 			bashls = {},
 			zls = {},
+			rust_analyzer = {
+				settings = {
+					["rust-analyzer"] = {
+						checkOnSave = {
+							command = "clippy",
+						},
+					},
+				},
+			},
 		}
 
 		require("mason").setup()
-		local ensure_installed = {
-			"stylua", -- Used to format lua code
-		}
-		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
-		-- setup servers installed with mason
 		require("mason-lspconfig").setup({
 			handlers = {
 				function(server_name)
 					local server = servers[server_name] or {}
-					-- This handles overriding only values explicitly passed
-					-- by the server configuration above. Useful when disabling
-					-- certain features of an LSP (for example, turning off formatting for tsserver)
 					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
 					lsp[server_name].setup(server)
 				end,

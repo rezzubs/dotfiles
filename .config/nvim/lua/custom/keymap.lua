@@ -1,14 +1,13 @@
 -- GLOBAL KEYBINDINGS
---  :help vim.keymap.set()
+-- :help vim.keymap.set()
 
--- Set highlight on search, but clear on pressing <Esc> in normal mode
-vim.opt.hlsearch = true
+-- Clear highligh after searching
 Nmap("<Esc>", "<cmd>nohlsearch<CR>")
 
--- Diagnostic keymaps
-Nmap("[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
-Nmap("]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
-Nmap("<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+-- Diagnostics
+Nmap("[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic message" })
+Nmap("]d", vim.diagnostic.goto_next, { desc = "Next diagnostic message" })
+Nmap("<leader>q", vim.diagnostic.setloclist, { desc = "Quickfix list" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -22,21 +21,3 @@ Nmap("<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 Nmap("<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 vim.keymap.set({ "n", "i", "c", "v" }, "<C-g>", "<Esc><Esc>")
-
--- Use emacs movement in insert/command mode.
-vim.keymap.set({ "i", "c" }, "<C-f>", "<Right>")
-vim.keymap.set({ "i", "c" }, "<C-b>", "<Left>")
-vim.keymap.set({ "i", "c" }, "<C-n>", "<Down>")
-vim.keymap.set({ "i", "c" }, "<C-p>", "<Up>")
-vim.keymap.set({ "i", "c" }, "<M-b>", "<C-Left>")
-vim.keymap.set({ "i", "c" }, "<M-f>", "<C-Right>")
-vim.keymap.set("i", "<C-a>", "<Esc>0i")
-vim.keymap.set("i", "<C-e>", "<Esc>$i")
-vim.keymap.set({ "i", "c" }, "<C-d>", "<Esc>lxi")
-
-Nmap("<leader>l", ":Lazy<Return>")
-
-Nmap(";", ":")
-
-Nmap("H", ":bn<Return>")
-Nmap("L", ":bp<Return>")

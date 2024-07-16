@@ -8,14 +8,13 @@ vim.opt.relativenumber = true
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
 
--- Don't show the mode, since it's already in status line
-vim.opt.showmode = false
-
 -- Use OS clipboard
 -- :help 'clipboard'
 vim.opt.clipboard = "unnamedplus"
 
--- Enable break indent
+-- Enable break indent.
+-- Every wrapped line will continue visually indented (same amount of space as
+-- the beginning of that line), thus preserving horizontal blocks of text.
 vim.opt.breakindent = true
 
 -- Save undo history
@@ -42,11 +41,11 @@ vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
--- Preview substitutions live, as you type!
+-- Preview substitutions `:s` live, as you type!
 vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
