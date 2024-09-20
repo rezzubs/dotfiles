@@ -5,13 +5,13 @@ import os.path as path
 import re
 
 GENSHIN_ROOT = (
-    "/home/rezzubs/.local/share/anime-game-launcher/Genshin Impact/"
+    "/home/rezzubs/.local/share/honkers-railway-launcher/HSR/"
 )
 
 data_path = glob(
     path.join(
         GENSHIN_ROOT,
-        "GenshinImpact_Data/webCaches/*/Cache/Cache_Data/data_2",
+        "StarRail_Data/webCaches/*/Cache/Cache_Data/data_2",
     )
 )[-1]
 
@@ -19,7 +19,7 @@ with open(data_path, encoding="utf-8", errors="ignore") as file:
     data = file.read()
 
 
-pattern = r"https:\/\/(?:[a-z\-]+\.?)+\/genshin\/event\/e20190909gacha-v\d\/index.html\?(?:\w+=(?:\w|\.|\%)+\&?)+global"
+pattern = r"https:\/\/(?:[a-z\-]+\.?)+\/common\/gacha_record\/api\/getGachaLog\?(?:\w+=(?:\w|\.|\%|-)+\&?)+"
 
 url = re.findall(pattern, data)[-1]
 
