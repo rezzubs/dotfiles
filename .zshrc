@@ -53,6 +53,13 @@ alias ll="ls -la"
 alias lg="lazygit"
 alias hx="helix"
 
+
+nvim(){
+  kitten @ set-spacing padding=0
+  command nvim "$@"
+  kitten @ set-spacing padding=8
+}
+
 export EDITOR=nvim
 
 eval "$(fzf --zsh)"
