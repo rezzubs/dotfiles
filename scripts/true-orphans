@@ -1,0 +1,78 @@
+#!/bin/env python
+"""List packages which are optional for some other packages but otherwise not required.
+
+Format: package_name: optional_for
+
+Usage:
+    true-orphans [Options]
+    pacman -Qi | true-orphans
+
+Options:
+    -R, --remove    call `pacman -Rsun` on the list
+    -h, --help      show this page
+"""
+
+import sys
+import subprocess
+import select
+
+
+def get_field(pkg: str, key: str) -> str:
+    for line in pkg.splitlines():
+        assert "\n" not in line
+        match line.split(":"):
+            case [field, *rest]:
+                if key == field.strip():
+                    return "".join(rest).strip()
+            case _:
+                raise ValueError(f"unexpected input `{line}`")
+    else:
+        raise ValueError(f"no key `{key}` in:\n{pkg}")
+
+
+def find_orphans(package_info: str) -> dict[str, list[str]]:
+    orphans = {}
+    packages = package_info.strip().split("\n\n")
+    for pkg in packages:
+        reason = get_field(pkg, "Install Reason")
+        if reason == "Explicitly installed":
+            continue
+        required = get_field(pkg, "Required By")
+        if required != "None":
+            continue
+        optional = get_field(pkg, "Optional For")
+        if optional == "None":
+            continue
+
+        name = get_field(pkg, "Name")
+        dep_for = optional.split()
+        orphans[name] = dep_for
+    return orphans
+
+
+def main():
+    if "-h" in sys.argv or "--help" in sys.argv:
+        print(__doc__)
+        exit(0)
+
+    if select.select([sys.stdin], [], [], 0.0)[0]:
+        package_info = sys.stdin.read()
+    else:
+        result = subprocess.run(["pacman", "-Qi"], capture_output=True)
+        package_info = result.stdout.decode()
+
+    orphans = find_orphans(package_info)
+    if not orphans:
+        print("no orphans found", file=sys.stderr)
+        exit(0)
+
+    if "-R" in sys.argv or "--remove" in sys.argv:
+        result = subprocess.run(["sudo", "pacman", "-Rsun", *orphans.keys()])
+        exit(result.returncode)
+
+    for orphan, parents in orphans.items():
+        print(f"{orphan}: {" ".join(parents)}")
+
+
+if __name__ == "__main__":
+    main()
