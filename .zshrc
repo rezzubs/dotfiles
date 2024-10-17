@@ -52,6 +52,8 @@ alias ls="ls --color"
 alias ll="ls -la"
 alias lg="lazygit"
 alias hx="helix"
+alias zb="zig build"
+alias zbr="zig build run"
 
 
 nvim(){
