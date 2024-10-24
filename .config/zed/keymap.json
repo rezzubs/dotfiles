@@ -1,15 +1,21 @@
-// Zed keymap
-//
-// For information on binding keys, see the Zed
-// documentation: https://zed.dev/docs/key-bindings
-//
-// To see the default key bindings run `zed: open default keymap`
-// from the command palette.
 [
   {
-    "context": "Workspace",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
+      "ctrl-o": "pane::GoBack",
+      "ctrl-i": "pane::GoForward",
+      "ctrl-/": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-l": null
+    }
+  },
+  {
+    "context": "VimControl",
+    "bindings": {
+      "ctrl-b": "workspace::ToggleLeftDock"
     }
   },
   {
@@ -24,6 +30,13 @@
       "ctrl-y": "editor::ConfirmCompletion",
       "enter": null,
       "tab": null
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-p": null,
+      "ctrl-n": null
     }
   }
 ]
