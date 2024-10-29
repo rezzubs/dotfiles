@@ -21,7 +21,8 @@
   {
     "context": "vim_mode == insert",
     "bindings": {
-      "j k": ["workspace::SendKeystrokes", "escape"]
+      "j k": ["workspace::SendKeystrokes", "escape"],
+      "ctrl-k": "editor::ShowSignatureHelp"
     }
   },
   {
