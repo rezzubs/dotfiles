@@ -55,13 +55,6 @@ alias hx="helix"
 alias zb="zig build"
 alias zbr="zig build run"
 
-
-nvim(){
-  kitten @ set-spacing padding=0
-  command nvim "$@"
-  kitten @ set-spacing padding=8
-}
-
 export EDITOR=nvim
 
 eval "$(fzf --zsh)"
