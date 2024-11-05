@@ -1,5 +1,3 @@
--- :help lua-guide-autocommands
-
 local function set_indent(pattern, num_spaces)
 	vim.api.nvim_create_autocmd("FileType", {
 		pattern = pattern,

@@ -1,6 +1,3 @@
--- :help vim.opt
--- :help option-list
-
 vim.opt.number = true
 vim.opt.relativenumber = true
 
