@@ -13,48 +13,19 @@
 )
 
 (defvar
-  tap-time 300
-  hold-time 150
-)
-
-(defchords mods 60
-  (a) a
-  (s) s
-  (d) d
-  (f) f
-  (g) g
-  (a d) lmet
-  (s d) lsft
-  (d f) lctl
-  (d g) lalt
-  (s d f) (multi lctl lsft)
-  (a d f) (multi lmet lsft)
-
-  (h) h
-  (j) j
-  (k) k
-  (l) l
-  (;) ;
-  (h k) lalt
-  (j k) rctl
-  (k l) rsft
-  (k ;) rmet
-  (j k l) (multi rctl rsft)
-  (j k ;) (multi lmet rsft)
+  tap-time 180
+  hold-time 180
 )
 
 (defalias
-  a (chord mods a)
-  s (chord mods s)
-  d (chord mods d)
-  f (chord mods f)
-  g (chord mods g)
-
-  h (chord mods h)
-  j (chord mods j)
-  k (chord mods k)
-  l (chord mods l)
-  ; (chord mods ;)
+  a (tap-hold $tap-time $hold-time a lmet)
+  s (tap-hold $tap-time $hold-time s lalt)
+  d (tap-hold $tap-time $hold-time d lsft)
+  f (tap-hold $tap-time $hold-time f lctl)
+  j (tap-hold $tap-time $hold-time j rctl)
+  k (tap-hold $tap-time $hold-time k rsft)
+  l (tap-hold $tap-time $hold-time l ralt)
+  ; (tap-hold $tap-time $hold-time ; rmet)
 
   lalt (tap-hold $tap-time $hold-time esc (layer-while-held sym))
   ralt (tap-hold $tap-time $hold-time ret (layer-while-held sym))
@@ -68,7 +39,7 @@
 (deflayer base
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    @a   @s   @d   @f   @g   @h   @j   @k   @l   @;    _    _
+  _    @a   @s   @d   @f   _    _    @j   @k   @l   @;   _    _
   _    _    _    _    _    _    _    _    _    _    _    _
   _    _    @lalt          _            @ralt  _    _
 )
@@ -76,7 +47,7 @@
 (deflayer sym
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    @ü   @õ   _
-  _    @a   @s   @d   @f   @g   @h   @j   @k   @l   @ö   @ä   _
+  _    @a   @s   @d   @f   _    _    @j   @k   @l   @ö   @ä   _
   _    _    _    _    _    _    _    _    _    _    _    _
   _    _    tab            _            bspc   _    _
 )
