@@ -41,10 +41,11 @@ def find_orphans(package_info: str) -> dict[str, list[str]]:
         if required != "None":
             continue
         optional = get_field(pkg, "Optional For")
+        name = get_field(pkg, "Name")
         if optional == "None":
+            orphans[name] = []
             continue
 
-        name = get_field(pkg, "Name")
         dep_for = optional.split()
         orphans[name] = dep_for
     return orphans
@@ -71,7 +72,14 @@ def main():
         exit(result.returncode)
 
     for orphan, parents in orphans.items():
-        print(f"{orphan}: {" ".join(parents)}")
+        match parents:
+            case []:
+                parents = ""
+            case [x]:
+                parents = "\n└─" + x
+            case _:
+                parents = f"\n├─{"\n├─".join(parents[:-1])}\n└─{parents[-1]}"
+        print(orphan + parents)
 
 
 if __name__ == "__main__":
