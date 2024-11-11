@@ -24,16 +24,16 @@
   f (tap-hold $tap-time $hold-time f lctl)
   j (tap-hold $tap-time $hold-time j rctl)
   k (tap-hold $tap-time $hold-time k rsft)
-  l (tap-hold $tap-time $hold-time l ralt)
+  l (tap-hold $tap-time $hold-time l lalt)
   ; (tap-hold $tap-time $hold-time ; rmet)
 
-  lalt (tap-hold $tap-time $hold-time esc (layer-while-held sym))
-  ralt (tap-hold $tap-time $hold-time ret (layer-while-held sym))
+  lt (tap-hold $tap-time $hold-time esc (layer-while-held sym))
+  rt (tap-hold $tap-time $hold-time ret (layer-while-held sym))
 
-  õ (unicode õ)
-  ä (unicode ä)
-  ö (unicode ö)
-  ü (unicode ü)
+  õ RA-]
+  ä RA-'
+  ö RA-;
+  ü RA-[
 )
 
 (deflayer base
@@ -41,7 +41,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    @a   @s   @d   @f   _    _    @j   @k   @l   @;   _    _
   _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    @lalt          _            @ralt  _    _
+  _    _    @lt          _                @rt  _    _
 )
 
 (deflayer sym
