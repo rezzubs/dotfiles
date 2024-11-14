@@ -43,8 +43,7 @@
     "pyright": {
       "settings": {
         "python.analysis": {
-          "diagnosticMode": "workspace",
-          "typeCheckingMode": "strict"
+          "diagnosticMode": "workspace"
         }
       }
     }
