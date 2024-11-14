@@ -7,23 +7,32 @@
     }
   },
   {
-    "context": "Editor",
+    "context": "Editor && !VimControl",
     "bindings": {
-      "ctrl-l": null
+      "ctrl-l": null,
+      "ctrl-a": null
     }
   },
   {
     "context": "VimControl",
-    "bindings": {
-      "ctrl-b": "workspace::ToggleLeftDock"
-    }
+    "bindings": { "ctrl-b": "workspace::ToggleLeftDock" }
   },
   {
     "context": "vim_mode == insert",
     "bindings": {
-      "j k": ["workspace::SendKeystrokes", "escape"],
       "ctrl-k": "editor::ShowSignatureHelp"
     }
+  },
+  {
+    "context": "Editor && renaming",
+    "bindings": {
+      "ctrl-e": "editor::MoveToEndOfLine",
+      "ctrl-a": "editor::MoveToBeginningOfLine"
+    }
+  },
+  {
+    "context": "Editor && VimControl",
+    "bindings": { "g r": "editor::FindAllReferences" }
   },
   {
     "context": "Editor && showing_completions",
