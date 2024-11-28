@@ -36,6 +36,7 @@
   },
   "languages": {
     "Python": {
+      "language_servers": ["pyright", "ruff", "!pylsp"],
       "format_on_save": "on",
       "code_actions_on_format": {
         "source.organizeImports.ruff": true
