@@ -35,22 +35,44 @@
   ä RA-'
   ö RA-;
   ü RA-[
+
+  desc (multi esc (chord disable esc))
+  dspc (multi spc (chord disable spc))
+  eesc (multi esc (chord enable esc))
+  espc (multi spc (chord enable spc))
+)
+
+(defchords disable 500
+  (esc spc) (layer-switch disabled)
+)
+
+(defchords enable 500
+  (esc spc) (layer-switch base)
 )
 
 (deflayer base
-  XX
-  _    _    _    _    _    _    _    _    _    _    _    _    _    XX
+  @desc
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    @a   @s   @d   @f   _    _    @j   @k   @l   @;   _    XX
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    @a   @s   @d   @f   _    _    @j   @k   @l   @;   _    _
   _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    @lt          _                @rt  _    _
+  _    _    @lt          @dspc             @rt  _    _
 )
 
 (deflayer sym
-  XX
-  _    _    _    _    _    _    _    _    _    _    _    _    _    XX
+  _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    @ü   @õ   _
-  _    @a   @s   @d   @f   _    _    @j   @k   @l   @ö   @ä   XX
+  _    @a   @s   @d   @f   _    _    @j   @k   @l   @ö   @ä   _
   _    _    _    _    _    _    _    _    _    _    _    _
   _    _    tab            _            bspc   _    _
+)
+
+(deflayer disabled
+  @eesc
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    tab          @espc            bspc   _    _
 )
