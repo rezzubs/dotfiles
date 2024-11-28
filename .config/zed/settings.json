@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "features": {
+    "inline_completion_provider": "none"
+  },
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
@@ -16,11 +19,12 @@
   },
   "ui_font_size": 18,
   "vim_mode": true,
+  "use_autoclose": false,
   "buffer_font_size": 18,
   "theme": {
     "mode": "system",
-    "light": "Catppuccin Latte",
-    "dark": "Catppuccin Mocha"
+    "light": "Github Light",
+    "dark": "Github Dark"
   },
   "buffer_font_family": "JetBrains Mono",
   "relative_line_numbers": true,
