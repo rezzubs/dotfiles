@@ -49,11 +49,12 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 alias ls="ls --color"
-alias ll="ls -la"
+alias ll="ls -lah"
 alias lg="lazygit"
 alias hx="helix"
 alias zb="zig build"
 alias zbr="zig build run"
+alias z="zeditor"
 
 export EDITOR=nvim
 
