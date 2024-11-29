@@ -35,6 +35,17 @@
     "bindings": { "g r": "editor::FindAllReferences" }
   },
   {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": [
+        "vim::PushOperator",
+        {
+          "AddSurrounds": {}
+        }
+      ]
+    }
+  },
+  {
     "context": "Editor && showing_completions",
     "bindings": {
       "ctrl-y": "editor::ConfirmCompletion",
