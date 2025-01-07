@@ -14,8 +14,8 @@
 )
 
 (defvar
-  tap-time 180
-  hold-time 180
+  tap-time 160
+  hold-time 160
 )
 
 (defalias
@@ -74,5 +74,5 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    tab          @espc            bspc   _    _
+  _    _    _          @espc            _   _    _
 )
