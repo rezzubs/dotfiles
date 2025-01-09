@@ -7,11 +7,10 @@ completion-timeout = 5
 completion-trigger-len = 1
 rulers = [81]
 auto-pairs = false
-# end-of-line-diagnostics = "hint"
-#
-# [editor.inline-diagnostics]
-# cursor-line = "hint"
-# other-lines = "error"
+end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
 
 [editor.cursor-shape]
 insert = "bar"
