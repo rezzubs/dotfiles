@@ -5,9 +5,12 @@ auto-format = true
 
 [language-server.pyright.config.python.analysis]
 typeCheckingMode = "basic"
+diagnosticMode = "workspace"
 
 [language-server.ruff]
-command = "ruff-lsp"
+command = "ruff"
+args = ["server"]
+
 
 [[language]]
 name = "rust"

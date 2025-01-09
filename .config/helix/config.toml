@@ -6,6 +6,11 @@ cursorline = true
 completion-timeout = 5
 completion-trigger-len = 1
 rulers = [81]
+auto-pairs = false
+end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -24,5 +29,5 @@ nnbsp = "all"
 render = true
 skip-levels = 1
 
-[keys.insert.j]
-k = "normal_mode"
+[keys.normal]
+g = { q = ":reflow" }
