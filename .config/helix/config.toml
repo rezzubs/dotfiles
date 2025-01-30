@@ -8,6 +8,7 @@ completion-trigger-len = 1
 rulers = [81]
 auto-pairs = false
 end-of-line-diagnostics = "hint"
+soft-wrap = { enable = true }
 
 [editor.inline-diagnostics]
 cursor-line = "hint"
@@ -31,3 +32,4 @@ skip-levels = 1
 
 [keys.normal]
 g = { q = ":reflow" }
+space = { z = ":toggle soft-wrap.enable" }
