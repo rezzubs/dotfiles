@@ -54,9 +54,9 @@ alias lg="lazygit"
 alias hx="helix"
 alias zb="zig build"
 alias zbr="zig build run"
-alias z="zeditor"
 
-export EDITOR=nvim
+export EDITOR=helix
+export VISUAL=helix
 
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh --cmd cd)"
