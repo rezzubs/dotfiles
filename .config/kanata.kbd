@@ -1,5 +1,3 @@
-;; vim: commentstring=;;\ %s shiftwidth=2 tabstop=2
-
 (defcfg
   process-unmapped-keys yes
 )
@@ -28,14 +26,6 @@
   l (tap-hold $tap-time $hold-time l lalt)
   ; (tap-hold $tap-time $hold-time ; rmet)
 
-  lt (tap-hold $tap-time $hold-time esc (layer-while-held sym))
-  rt (tap-hold $tap-time $hold-time ret (layer-while-held sym))
-
-  õ RA-]
-  ä RA-'
-  ö RA-;
-  ü RA-[
-
   desc (multi esc (chord disable esc))
   dspc (multi spc (chord disable spc))
   eesc (multi esc (chord enable esc))
@@ -56,16 +46,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    @a   @s   @d   @f   _    _    @j   @k   @l   @;   _    _
   _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    @lt          @dspc             @rt  _    _
-)
-
-(deflayer sym
-  _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    @ü   @õ   _
-  _    @a   @s   @d   @f   _    _    @j   @k   @l   @ö   @ä   _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    tab            _            bspc   _    _
+  _    _    _          @dspc              _    _    _
 )
 
 (deflayer disabled
@@ -74,5 +55,5 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _          @espc            _   _    _
+  _    _    _         @espc               _    _    _
 )
