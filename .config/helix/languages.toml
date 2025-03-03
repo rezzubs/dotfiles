@@ -18,3 +18,8 @@ auto-format = true
 
 [language-server.rust-analyzer.config.check]
 command = "clippy"
+
+
+[[language]]
+name = "git-commit"
+text-width = 50
