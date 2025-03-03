@@ -18,6 +18,3 @@ if [ -d ~/.zshrc.d ]; then
     done
 fi
 unset rc
-
-. "$HOME/.cargo/env"
-# . "$HOME/.local/share/../bin/env"
