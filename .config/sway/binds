@@ -12,6 +12,9 @@ bindsym $mod+q kill
 # Exec menu
 bindsym $mod+d exec $menu
 
+# Screenshot
+bindsym Print exec grim -g "$(slurp)" - | wl-copy
+
 # Reload the configuration file
 bindsym $mod+Shift+c reload
 
