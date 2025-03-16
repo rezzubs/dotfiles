@@ -1,0 +1,17 @@
+bar {
+	position top
+	tray_output none
+
+	status_command while date +'%Y-%m-%d %H:%M:%S'; do sleep 1; done
+
+	colors {
+		statusline $white
+		background $black
+
+		focused_workspace $white $white $black
+		active_workspace $white $black $white
+			inactive_workspace $black $black $white
+			inactive_workspace $black $black $white
+		
+	}
+}

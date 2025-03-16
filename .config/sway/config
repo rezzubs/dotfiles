@@ -1,0 +1,26 @@
+# Include stuff installed by other packages.
+include /etc/sway/config.d/*
+
+# Set variables to use across configs.
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+set $term wezterm
+set $editor helix
+set $menu fuzzel
+
+# Allow moving and resizing with the mouse.
+floating_modifier $mod normal
+# Move the cursor when focus changes.
+mouse_warping container
+font JetBrainsMono 11
+
+include autostart
+include binds
+include resize
+include colors
+include bar
+
+include unique

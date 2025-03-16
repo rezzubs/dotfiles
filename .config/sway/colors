@@ -1,0 +1,8 @@
+set $white #ffffff
+set $black #000000
+set $accent #8471f5
+
+client.focused $white $white $black $accent
+client.focused_tab_title $white $white $black $accent
+client.focused_inactive $white $black $white
+client.unfocused $black $black $white
