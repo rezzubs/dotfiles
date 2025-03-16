@@ -2,7 +2,7 @@ bar {
 	position top
 	tray_output none
 
-	status_command while date +'%Y-%m-%d %H:%M:%S'; do sleep 1; done
+	status_command ~/.config/sway/bar-status.py
 
 	colors {
 		statusline $white
