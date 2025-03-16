@@ -6,10 +6,10 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-bindsym $mod+f fullscreen
+bindsym $mod+Control+f fullscreen
 
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+f floating toggle
+bindsym $mod+f focus mode_toggle
 
 bindsym $mod+o focus parent
 bindsym $mod+i focus child

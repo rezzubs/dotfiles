@@ -21,3 +21,6 @@ bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. 
 # Open config file
 bindsym $mod+c exec $term -e $editor ~/.config/sway
 
+# Toggle IME
+bindsym $mod+space exec fcitx5-remote -t \
+	&& fcitx5-remote -n > /tmp/fcitx5-name

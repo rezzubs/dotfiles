@@ -1,4 +1,6 @@
 #!/bin/env python
+from __future__ import annotations
+
 from datetime import datetime, timedelta
 import json
 import asyncio
@@ -11,10 +13,35 @@ class NotificationState(enum.Enum):
     DND = "󰂛"
 
 
+class FcitxState:
+    PATH = "/tmp/fcitx5-name"
+
+    def __init__(self, input_method_name: str) -> None:
+        self.name = input_method_name
+
+    @classmethod
+    def read(cls) -> FcitxState:
+        with open(FcitxState.PATH) as f:
+            return cls(f.read().strip())
+
+    def __str__(self) -> str:
+        match self.name:
+            case "keyboard-ee-us":
+                return "ee"
+            case "anthy":
+                return "あ"
+            case _:
+                return "unknown-input"
+
+    def __eq__(self, other: FcitxState) -> bool:
+        return self.name == other.name
+
+
 class Status:
     def __init__(self) -> None:
         self.notif: NotificationState = NotificationState.NORMAL
         self.datetime: datetime = datetime.now()
+        self.fcitx = FcitxState.read()
 
     async def update_datetime(self) -> None:
         """Updates the datetime by waiting for next second to arrive."""
@@ -45,9 +72,19 @@ class Status:
                 self.notif = NotificationState.NORMAL
             self.print()
 
+    async def update_fcitx(self) -> None:
+        """Reads the currently active input method name"""
+        while True:
+            await asyncio.sleep(1)
+            new = FcitxState.read()
+            if self.fcitx != new:
+                self.fcitx = new
+                self.print()
+
     def __str__(self) -> str:
         elements = [
             self.notif.value,
+            str(self.fcitx),
             self.datetime.strftime("%a %Y-%m-%d %H:%M:%S"),
         ]
         return " ".join(elements)
@@ -59,6 +96,7 @@ class Status:
         async with asyncio.TaskGroup() as tg:
             tg.create_task(self.update_notif())
             tg.create_task(self.update_datetime())
+            tg.create_task(self.update_fcitx())
 
 
 def main() -> None:
