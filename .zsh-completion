@@ -1,10 +1,12 @@
 
 
 
+
+
 # The following lines were added by compinstall
 
 zstyle ':completion:*' auto-description '%d'
-zstyle ':completion:*' completer _complete _ignored _approximate
+zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' format 'completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' insert-unambiguous true
