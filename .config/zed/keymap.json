@@ -3,19 +3,21 @@
     "bindings": {
       "ctrl-o": "pane::GoBack",
       "ctrl-i": "pane::GoForward",
-      "ctrl-/": "terminal_panel::ToggleFocus"
+      "ctrl-/": "terminal_panel::ToggleFocus",
+      "ctrl-shift-o": "workspace::Open"
     }
   },
   {
-    "context": "Editor && !VimControl",
+    "context": "ProjectPanel && not_editing",
     "bindings": {
-      "ctrl-l": null,
-      "ctrl-a": null
+      "ctrl-shift-e": "workspace::ToggleLeftDock"
     }
   },
   {
-    "context": "VimControl",
-    "bindings": { "ctrl-b": "workspace::ToggleLeftDock" }
+    "context": "GitPanel",
+    "bindings": {
+      "ctrl-shift-g": "workspace::ToggleLeftDock"
+    }
   },
   {
     "context": "vim_mode == insert",
@@ -24,25 +26,9 @@
     }
   },
   {
-    "context": "Editor && renaming",
-    "bindings": {
-      "ctrl-e": "editor::MoveToEndOfLine",
-      "ctrl-a": "editor::MoveToBeginningOfLine"
-    }
-  },
-  {
-    "context": "Editor && VimControl",
-    "bindings": { "g r": "editor::FindAllReferences" }
-  },
-  {
     "context": "vim_mode == visual",
     "bindings": {
-      "shift-s": [
-        "vim::PushOperator",
-        {
-          "AddSurrounds": {}
-        }
-      ]
+      "shift-s": ["vim::PushAddSurrounds", {}]
     }
   },
   {
