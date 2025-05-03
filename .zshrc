@@ -5,7 +5,6 @@ SAVEHIST=10000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
-
 source "${HOME}/.zsh-completion"
 bindkey '^[[Z' reverse-menu-complete
 
