@@ -7,7 +7,7 @@ o.expandtab = true
 
 o.scrolloff = 10
 o.cursorline = true
-o.colorcolumn = {"+1"}
+o.colorcolumn = { "+1" }
 o.signcolumn = "yes"
 
 o.undofile = true
