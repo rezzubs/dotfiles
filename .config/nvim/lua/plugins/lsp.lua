@@ -3,6 +3,8 @@ return {
     config = function()
         vim.lsp.enable("rust_analyzer")
         vim.lsp.enable("nixd")
+	vim.lsp.enable("pyright")
+	vim.lsp.enable("ruff")
 
         vim.lsp.config("rust_analyzer", {
             settings = {
