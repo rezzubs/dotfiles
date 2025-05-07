@@ -1,10 +1,9 @@
-
 [window]
 decorations = "None"
 startup_mode = "Maximized"
 
 [font]
-normal = { family = "Iosevka" }
+normal = { family = "Iosevka Nerd Font Mono" }
 size = 12
 
 [general]
