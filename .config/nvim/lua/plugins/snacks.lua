@@ -34,5 +34,54 @@ return {
 			end,
 			desc = "Find Config File",
 		},
+		{
+			"grr",
+			function()
+				Snacks.picker.lsp_references()
+			end,
+			desc = "LSP references",
+		},
+		{
+			"grs",
+			function()
+				Snacks.picker.lsp_symbols()
+			end,
+			desc = "LSP symbols",
+		},
+		{
+			"grS",
+			function()
+				Snacks.picker.lsp_workspace_symbols()
+			end,
+			desc = "LSP workspace symbols",
+		},
+		{
+			"grt",
+			function()
+				Snacks.picker.lsp_type_definitions()
+			end,
+			desc = "LSP type definitions",
+		},
+		{
+			"gri",
+			function()
+				Snacks.picker.lsp_implementations()
+			end,
+			desc = "LSP definitions",
+		},
+		{
+			"gd",
+			function()
+				Snacks.picker.lsp_definitions()
+			end,
+			desc = "LSP definitions",
+		},
+		{
+			"gD",
+			function()
+				Snacks.picker.lsp_declarations()
+			end,
+			desc = "LSP declarations",
+		},
 	},
 }
