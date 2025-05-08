@@ -6,6 +6,7 @@ return {
 		vim.lsp.enable("pyright")
 		vim.lsp.enable("ruff")
 		vim.lsp.enable("luals")
+		vim.lsp.enable("zls")
 
 		vim.lsp.config("rust_analyzer", {
 			settings = {
