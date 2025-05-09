@@ -42,14 +42,14 @@ return {
 			desc = "LSP references",
 		},
 		{
-			"grs",
+			"<leader>ps",
 			function()
 				Snacks.picker.lsp_symbols()
 			end,
 			desc = "LSP symbols",
 		},
 		{
-			"grS",
+			"<leader>pS",
 			function()
 				Snacks.picker.lsp_workspace_symbols()
 			end,
@@ -83,5 +83,21 @@ return {
 			end,
 			desc = "LSP declarations",
 		},
+		{
+			"<leader>pD",
+			function()
+				Snacks.picker.diagnostics()
+			end,
+			desc = "Workspace diagnostics",
+
+		},
+		{
+			"<leader>pd",
+			function()
+				Snacks.picker.diagnostics_buffer()
+			end,
+			desc = "Buffer diagnostics",
+
+		}
 	},
 }
