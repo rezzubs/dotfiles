@@ -1,8 +1,4 @@
-local nmap = function(keys, action)
-	vim.keymap.set("n", keys, action, { noremap = true, silent = true })
-end
-
-nmap("<leader>e", "<cmd>Explore<return>")
+Nmap("<leader>e", "<cmd>Explore<return>")
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "netrw",
 	callback = function()
@@ -10,4 +6,4 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
-nmap("<esc>", "<cmd>nohl<return>")
+Nmap("<esc>", "<cmd>nohl<return>")
