@@ -17,5 +17,16 @@ return {
 				},
 			},
 		})
+
+		vim.api.nvim_create_autocmd("LspAttach", {
+			callback = function()
+				Nmap("]d", function()
+					vim.diagnostic.jump({ count = 1, float = true })
+				end)
+				Nmap("[d", function()
+					vim.diagnostic.jump({ count = -1, float = true })
+				end)
+			end,
+		})
 	end,
 }
