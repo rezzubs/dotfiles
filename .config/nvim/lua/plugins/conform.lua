@@ -9,6 +9,10 @@ return {
 		formatters_by_ft = {
 			nix = { "nixfmt" },
 			lua = { "stylua" },
+			html = { "prettierd" },
+			htmldjango = { "prettierd" },
+			css = { "prettierd" },
+			javascript = { "prettierd" },
 		},
 		default_format_opts = {
 			lsp_format = "fallback",
