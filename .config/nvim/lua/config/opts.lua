@@ -3,6 +3,8 @@ local o = vim.opt
 o.number = true
 o.relativenumber = true
 
+o.clipboard="unnamedplus"
+
 o.expandtab = true
 
 o.scrolloff = 10
