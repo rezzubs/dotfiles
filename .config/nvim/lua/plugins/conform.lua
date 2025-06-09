@@ -13,6 +13,8 @@ return {
 			htmldjango = { "prettierd" },
 			css = { "prettierd" },
 			javascript = { "prettierd" },
+			typescript = { "prettierd" },
+			typescriptreact = { "prettierd" },
 		},
 		default_format_opts = {
 			lsp_format = "fallback",
